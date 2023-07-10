@@ -872,6 +872,7 @@ public class Idea {
         ObjectMapper objectMapper = new ObjectMapper();
         List<Idea> ideas;
 
+
         try {
             ideas = objectMapper.readValue(file, new TypeReference<List<Idea>>() {});
         } catch (IOException e) {
