@@ -1,0 +1,3051 @@
+[ {
+  "Format" : "IDEA0",
+  "ID" : "f62537c2-77b8-49c7-a0a2-24c4b81b20f8",
+  "DetectTime" : 1552255483312,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "22.198.228.92" ],
+    "Port" : [ 3508 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "7f3e0acf-6812-442c-a339-f069a5d83524",
+  "DetectTime" : 1552255470399,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "63.130.102.28" ],
+    "Port" : [ 3714 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "7b2a01b2-6d01-47d8-9bf1-4a8eedf41c52",
+  "DetectTime" : 1552255299556,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "14.205.135.200" ],
+    "Port" : [ 54637 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "78957bda-6808-490d-b7cb-b5b3009a7231",
+  "DetectTime" : 1552255463744,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 49167 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "77e71118-4572-4d0a-984c-ef33991d547a",
+  "DetectTime" : 1552255798763,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 65026 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "fc030ade-b96a-4f0e-a1b6-ce34707b8d5d",
+  "DetectTime" : 1552256094136,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 59255 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "f76a6e62-f6f3-4a3c-94b3-c5f9dbc213ea",
+  "DetectTime" : 1552256070383,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "224.71.241.8" ],
+    "Port" : [ 13471 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "ee6df00e-01bd-4795-a355-03b63d3cd160",
+  "DetectTime" : 1552256391678,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 57836 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "c9ac26ca-7b2a-4743-aa0d-c326983ae429",
+  "DetectTime" : 1552256226821,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.98.99.157" ],
+    "Port" : [ 52687 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "6b9e42ee-a5e8-43ad-967b-10c4063e69d2",
+  "DetectTime" : 1552256688360,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 51109 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "e3fda897-c0c8-4906-8a31-fcc8cc8e09c1",
+  "DetectTime" : 1552256572375,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "3.75.100.189" ],
+    "Port" : [ 3515 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "f00dc31e-41b2-4df4-917d-a6aa3a033859",
+  "DetectTime" : 1552256985474,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 61669 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "daae11bd-8bfd-4c47-92ab-f6a7b379ec25",
+  "DetectTime" : 1552256905173,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "191.243.17.44" ],
+    "Port" : [ 63572 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "dd63972f-28fe-4fda-a5a0-de5f94c99b9e",
+  "DetectTime" : 1552257282776,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 55844 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "23f595c1-f801-4ad1-a02b-c807cdd3f0b2",
+  "DetectTime" : 1552257296454,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "191.243.17.44" ],
+    "Port" : [ 49431 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "62e98d52-3012-49da-9fe8-39ceea56fee4",
+  "DetectTime" : 1552257578824,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 50021 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "ffdfb5d9-124b-4540-9245-f457b6a196f3",
+  "DetectTime" : 1552257332674,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "114.249.77.255" ],
+    "Port" : [ 62552 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "438be5ed-22e4-47a8-8db7-5b76db20248c",
+  "DetectTime" : 1552257877610,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 60579 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "b82f5f83-f325-448b-99a9-60329e07b46c",
+  "DetectTime" : 1552257785346,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "86.149.145.135" ],
+    "Port" : [ 3715 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "019f4b38-897c-4810-9bc6-9db559c42e79",
+  "DetectTime" : 1552258172741,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 56904 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "8fa4ef45-5df3-4742-969c-93b64d283f12",
+  "DetectTime" : 1552258383390,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "164.245.122.134" ],
+    "Port" : [ 51450 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "42ecd12b-809f-45f2-a94b-d2a6f4dd85ae",
+  "DetectTime" : 1552258469642,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 55600 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "f03ea65e-49a4-4b28-8791-4d26bb24cba1",
+  "DetectTime" : 1552258571934,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "126.12.84.68" ],
+    "Port" : [ 63292 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "d244da73-1cca-421b-b286-ad9c33ff838b",
+  "DetectTime" : 1552258768928,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 49775 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552258813_gc15.cesnet.cz_1212_src_ip_218.75.40.148",
+  "DetectTime" : 1552258813000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "255.171.239.105" ],
+    "Port" : [ 23599, 23605, 23609, 23614 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 32,
+    "Interface" : [ "144 (Bundle-Ether111, Telecom Italia Sparkle [main], 2001:41a8:500:2:0:0:0:42,195.22.215.229)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "128.221.155.129", "128.221.145.254", "128.221.242.122", "128.221.242.108" ],
+    "Port" : [ 53 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 1,
+    "Interface" : [ "156 (HundredGigE0/0/0/0, R136, 2001:718:0:600:0:135:136:10,195.113.235.99)" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552258863_gc15.cesnet.cz_1212_src_ip_92.63.196.21",
+  "DetectTime" : 1552258863000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "67.205.216.43" ],
+    "Port" : [ 53587 ],
+    "Proto" : [ "tcp" ],
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 1,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.228.70", "143.166.242.24", "143.166.244.49", "143.166.245.109" ],
+    "Port" : [ 20039, 20043, 20045, 20070 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 32,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552258933_gc15.cesnet.cz_1212_src_ip_89.248.168.51",
+  "DetectTime" : 1552258933000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "69.255.80.108" ],
+    "Port" : [ 34345, 37023, 39386, 40146 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 26,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "226.152.170.243", "226.152.184.69", "226.152.24.98", "226.152.22.7" ],
+    "Port" : [ 6257 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 26,
+    "PortCount" : 1,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552259010_gc15.cesnet.cz_1212_src_ip_92.63.196.21",
+  "DetectTime" : 1552259010000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "67.205.216.43" ],
+    "Port" : [ 53587 ],
+    "Proto" : [ "tcp" ],
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 1,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.235.91", "143.166.209.28", "143.166.211.3", "143.166.204.24" ],
+    "Port" : [ 20000, 20005, 20039, 20045 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 32,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552259063_gc15.cesnet.cz_1212_src_ip_218.75.40.148",
+  "DetectTime" : 1552259063000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "255.171.239.105" ],
+    "Port" : [ 23472, 23477, 23478, 23505 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 32,
+    "Interface" : [ "144 (Bundle-Ether111, Telecom Italia Sparkle [main], 2001:41a8:500:2:0:0:0:42,195.22.215.229)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "128.221.243.239", "128.221.146.175", "128.221.132.35", "128.221.31.202" ],
+    "Port" : [ 102 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 1,
+    "Interface" : [ "156 (HundredGigE0/0/0/0, R136, 2001:718:0:600:0:135:136:10,195.113.235.99)" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "9276b818-0813-4dfb-b636-b81999afc34f",
+  "DetectTime" : 1552259026862,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "68.72.176.13" ],
+    "Port" : [ 55218 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "429dc809-fa35-44f0-878d-b6cd11c62577",
+  "DetectTime" : 1552258843922,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "251.9.229.97" ],
+    "Port" : [ 2027 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "da343271-12c9-406b-b719-df4934feb4ed",
+  "DetectTime" : 1552259067538,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 60335 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "e0d1cca8-499c-4923-a2ca-7bd587843f74",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname607" ],
+    "IP4" : [ "128.121.126.203" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.62.31", "142.252.6.122", "142.252.92.142", "142.252.87.251", "142.252.106.209" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552259154_gc15.cesnet.cz_1212_src_ip_92.63.196.21",
+  "DetectTime" : 1552259154000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "67.205.216.43" ],
+    "Port" : [ 53587 ],
+    "Proto" : [ "tcp" ],
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 1,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.113.73", "143.166.221.120", "143.166.210.57", "143.166.192.116" ],
+    "Port" : [ 20003, 20040, 20042, 20055 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 32,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "d9dfb2ae-1f10-410e-9d0e-a05c05cf7a44",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.192.59.243" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.187.125", "142.252.187.241", "142.252.187.121", "142.252.187.122", "142.252.187.133", "142.252.187.243", "142.252.95.127", "142.252.98.121", "142.252.187.234", "142.252.187.183" ],
+    "Port" : [ 5900 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "ea7a0a8c-f126-4a7d-a5b6-7ccbb2db46e7",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "124.55.119.175" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.10.207", "142.252.251.63", "142.252.45.66", "142.252.32.180", "142.252.251.154", "142.252.73.167", "142.252.94.117", "142.252.103.255", "142.252.53.177", "142.252.94.84" ],
+    "Port" : [ 11, 17, 53, 80, 102, 111, 119, 123, 391, 500, 554, 2323, 2375, 5432, 5900, 5986, 7547, 8080, 11211, 27017 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "c483fe62-4912-455e-94a5-95b31b8a5700",
+  "DetectTime" : 1552255261000,
+  "Category" : [ "Attempt.Login" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname328" ],
+    "IP4" : [ "42.179.175.35" ],
+    "Proto" : [ "tcp", "telnet" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.92.193" ],
+    "Port" : [ 23 ],
+    "Proto" : [ "tcp", "telnet" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "3931d2db-6b83-48b1-91ef-65620be425c6",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.129.192.44" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.7.135", "142.252.116.81", "142.252.143.91", "142.252.17.43", "142.252.204.0", "142.252.235.91", "142.252.204.35", "142.252.114.239", "142.252.167.226", "142.252.7.176" ],
+    "Port" : [ 992 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "756079e1-a7a9-4ff4-b555-d62e9289fd06",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "1.33.226.5" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.1.15", "142.252.70.46", "142.252.193.241", "142.252.5.94", "142.252.183.159", "142.252.26.122", "142.252.219.150", "142.252.227.83", "142.252.104.199", "142.252.115.75" ],
+    "Port" : [ 23 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "c95172c0-0267-46c0-9ffa-f448fb4a3442",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.183.222.139" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.182.69", "142.252.188.129", "142.252.191.229", "142.252.188.212", "142.252.179.162", "142.252.97.203", "142.252.184.74", "142.252.1.153", "142.252.40.202", "142.252.94.205" ],
+    "Port" : [ 23 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "be1b7c51-67f7-4e56-b554-2070e15ff3c8",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.192.59.136" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.206.243", "142.252.233.209", "142.252.206.112", "142.252.206.82", "142.252.206.26", "142.252.122.154", "142.252.206.251", "142.252.154.30", "142.252.206.160", "142.252.206.215" ],
+    "Port" : [ 22, 53, 68, 80, 443 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "cf77d04b-c553-41ce-8889-7ce13894f3ef",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname679" ],
+    "IP4" : [ "185.183.222.4" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.157.89", "142.252.254.202", "142.252.253.248", "142.252.180.106", "142.252.254.6", "142.252.115.197", "142.252.173.211", "142.252.122.13", "142.252.216.240", "142.252.113.202" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "d1fd93f4-f1bf-4139-8b18-45f4d0cba23f",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "226.153.85.129" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.79.200", "142.252.60.136", "142.252.38.40", "142.252.41.12", "142.252.38.128", "142.252.57.105", "142.252.133.105", "142.252.95.45", "142.252.47.208", "142.252.153.13" ],
+    "Port" : [ 21 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "2da4ca0e-b02f-475b-9a1e-20060b77d9f7",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname1083" ],
+    "IP4" : [ "49.135.226.161" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.95.239", "142.252.60.163", "142.252.50.63", "142.252.38.50", "142.252.6.153", "142.252.44.124", "142.252.72.188", "142.252.38.74", "142.252.95.246", "142.252.95.156" ],
+    "Port" : [ 443 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "de2dbe16-880d-4127-a938-025f9fb58764",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "39.212.176.105" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.13.212", "142.252.36.110", "142.252.93.58", "142.252.93.213", "142.252.60.220", "142.252.77.192", "142.252.254.79", "142.252.93.152", "142.252.44.110", "142.252.43.240" ],
+    "Port" : [ 80 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "9fd271ce-efff-4912-a686-dff435fe7c4b",
+  "DetectTime" : 1552255213000,
+  "Category" : [ "Attempt.Login" ],
+  "Source" : [ {
+    "IP4" : [ "156.31.85.225" ],
+    "Proto" : [ "tcp", "telnet" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.92.126" ],
+    "Port" : [ 23 ],
+    "Proto" : [ "tcp", "telnet" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "983a080a-d3e0-433e-8961-7a495d898417",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Attempt.Login" ],
+  "Source" : [ {
+    "IP4" : [ "172.127.251.68" ],
+    "Proto" : [ "tcp", "rdp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.54.140" ],
+    "Port" : [ 3389 ],
+    "Proto" : [ "tcp", "rdp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "e161d36d-360f-4053-ad48-0c5f056fd95d",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname300" ],
+    "IP4" : [ "224.90.249.168" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.177.127", "142.252.209.19", "142.252.115.202", "142.252.250.18", "142.252.61.4", "142.252.90.127", "142.252.96.68", "142.252.139.207", "142.252.150.46", "142.252.58.0" ],
+    "Port" : [ 81 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "421a40df-1932-4d05-93e2-67626561568b",
+  "DetectTime" : 1552255259000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname1208" ],
+    "IP4" : [ "179.182.202.148" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.69.77", "142.252.149.254", "142.252.61.166", "142.252.44.40", "142.252.91.132", "142.252.126.225", "142.252.152.26", "142.252.175.98", "142.252.255.2", "142.252.214.238" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "424cd43c-52f8-4fa6-a493-a69961253644",
+  "DetectTime" : 1552255200000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "67.218.192.13" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.114.155", "142.252.113.121", "142.252.137.141", "142.252.117.70", "142.252.62.125", "142.252.227.73", "142.252.227.41", "142.252.114.170", "142.252.197.64", "142.252.89.35" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552259285_gc15.cesnet.cz_1212_src_ip_92.63.196.21",
+  "DetectTime" : 1552259285000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "67.205.216.43" ],
+    "Port" : [ 53587 ],
+    "Proto" : [ "tcp" ],
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 1,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.51.168", "143.166.243.156", "143.166.195.11", "143.166.60.66" ],
+    "Port" : [ 20002, 20011, 20045, 20047 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 32,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552259389_gc15.cesnet.cz_1212_src_ip_92.63.196.21",
+  "DetectTime" : 1552259389000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "67.205.216.43" ],
+    "Port" : [ 53587 ],
+    "Proto" : [ "tcp" ],
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 1,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.119.248", "143.166.132.234", "143.166.25.228", "143.166.93.127" ],
+    "Port" : [ 20005, 20026, 20047, 20053 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 32,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "97b05478-06bf-47f8-9f52-b1720776e8dc",
+  "DetectTime" : 1552259351896,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "165.108.108.119" ],
+    "Port" : [ 52475 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "c2dca15f-9c2f-4372-993f-f1e855ad2ae7",
+  "DetectTime" : 1552259203756,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "97.182.180.211" ],
+    "Port" : [ 52643 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "21b5ba3d-879a-4b69-a23a-fe0cbea2b776",
+  "DetectTime" : 1552259277460,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.58.160.1" ],
+    "Port" : [ 1239 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "56264a62-d47c-475a-ae79-551cea22f858",
+  "DetectTime" : 1552259366597,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 54511 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "6ebd68b7-6eef-435c-9f25-66843e59d73d",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "124.55.119.174" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.166.206", "142.252.166.202", "142.252.166.210", "142.252.166.215", "142.252.166.216", "142.252.166.223", "142.252.166.243", "142.252.166.251", "142.252.166.67", "142.252.166.74" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "c58e0b82-72d8-4995-b650-255cb702d093",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname607" ],
+    "IP4" : [ "128.121.126.203" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.62.31", "142.252.6.122", "142.252.92.142", "142.252.87.251", "142.252.106.209" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552259531_gc15.cesnet.cz_1212_src_ip_92.63.196.21",
+  "DetectTime" : 1552259531000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "67.205.216.43" ],
+    "Port" : [ 53587 ],
+    "Proto" : [ "tcp" ],
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 1,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.249.225", "143.166.22.222", "143.166.86.141", "143.166.48.93" ],
+    "Port" : [ 20001, 20003, 20005, 20009 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 32,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "dedcef50-c227-4dac-aede-f1c3222b5d6f",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.129.192.44" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.222.193", "142.252.184.146", "142.252.249.95", "142.252.222.156", "142.252.100.212", "142.252.184.244", "142.252.184.160", "142.252.220.23", "142.252.100.188", "142.252.100.190" ],
+    "Port" : [ 992 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "33c1e2d8-7dfb-4c19-904d-f49c2047d2d9",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "226.153.85.129" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.234.249", "142.252.57.102", "142.252.72.252", "142.252.38.183", "142.252.78.41", "142.252.43.204", "142.252.60.155", "142.252.13.167", "142.252.153.1", "142.252.112.121" ],
+    "Port" : [ 21 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1e725dcd-6b9f-45de-9d39-25deab635301",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "124.55.119.175" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.11.44", "142.252.108.212", "142.252.95.23", "142.252.157.56", "142.252.228.64", "142.252.230.232", "142.252.103.217", "142.252.108.225", "142.252.108.196", "142.252.213.226" ],
+    "Port" : [ 11, 17, 69, 80, 102, 111, 119, 179, 391, 554, 626, 880, 2323, 2375, 5000, 5060, 5986, 7547, 8080, 11211 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "2ad0422f-4af9-4475-93fe-42bafed51e91",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "1.33.226.5" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.81.52", "142.252.134.131", "142.252.26.134", "142.252.0.155", "142.252.19.253", "142.252.10.164", "142.252.217.121", "142.252.49.9", "142.252.183.100", "142.252.61.3" ],
+    "Port" : [ 23 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "d48e43b6-2961-4da0-8435-1afb30701e27",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.192.59.136" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.135.136", "142.252.226.59", "142.252.226.3", "142.252.116.59", "142.252.67.97", "142.252.120.60", "142.252.15.196", "142.252.6.144", "142.252.160.37", "142.252.251.141" ],
+    "Port" : [ 22, 53, 68, 80, 443 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1c5d772b-1c7a-4bf9-86b2-5962348bdee5",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname1208" ],
+    "IP4" : [ "179.182.202.148" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.143.49", "142.252.130.133", "142.252.23.167", "142.252.58.14", "142.252.61.234", "142.252.18.160", "142.252.40.7", "142.252.224.41", "142.252.145.225", "142.252.174.218" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "50e68a5d-eb62-4d9b-a14b-d487dad79428",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "67.218.192.13" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.150.199", "142.252.110.75", "142.252.120.236", "142.252.35.26", "142.252.216.23", "142.252.214.250", "142.252.14.243", "142.252.92.119", "142.252.243.118", "142.252.79.7" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "9d917853-5ae4-4574-beb7-f9efa88214bf",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "67.205.217.7" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.134.21", "142.252.203.63", "142.252.147.216", "142.252.101.226", "142.252.208.101", "142.252.147.110", "142.252.152.205", "142.252.65.93", "142.252.203.52", "142.252.60.36" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "18530f29-bbff-4e67-a905-22c5d546f63b",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.183.222.139" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.27.255", "142.252.150.40", "142.252.51.154", "142.252.233.110", "142.252.244.149", "142.252.137.85", "142.252.220.42", "142.252.122.239", "142.252.114.0", "142.252.77.118" ],
+    "Port" : [ 23 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "ec22a2c3-0132-4ad2-8c19-cce8656a59dc",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname679" ],
+    "IP4" : [ "185.183.222.4" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.105.73", "142.252.179.20", "142.252.108.89", "142.252.54.160", "142.252.176.32", "142.252.53.79", "142.252.178.71", "142.252.139.4", "142.252.186.187", "142.252.48.235" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1cafc4d5-ed6d-438e-8c86-0e9d7dbb964d",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname1083" ],
+    "IP4" : [ "49.135.226.161" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.253.250", "142.252.93.86", "142.252.60.155", "142.252.179.55", "142.252.123.175", "142.252.62.86", "142.252.235.213", "142.252.153.86", "142.252.179.42", "142.252.94.13" ],
+    "Port" : [ 443 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "dbfd0281-34a6-49f7-94f7-79afe40d767d",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.192.59.243" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.91.12", "142.252.89.147", "142.252.89.139", "142.252.91.24", "142.252.89.183", "142.252.89.19", "142.252.107.96", "142.252.91.72", "142.252.90.163", "142.252.89.20" ],
+    "Port" : [ 5900 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "415142a9-df9f-4da6-9c81-b25f796b01e5",
+  "DetectTime" : 1552255500000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname300" ],
+    "IP4" : [ "224.90.249.168" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.236.56", "142.252.48.176", "142.252.102.25", "142.252.198.109", "142.252.174.241", "142.252.94.47", "142.252.217.248", "142.252.246.186", "142.252.168.82", "142.252.106.89" ],
+    "Port" : [ 81 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552259547_gc15.cesnet.cz_1212_src_ip_218.75.40.148",
+  "DetectTime" : 1552259547000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "255.171.239.105" ],
+    "Port" : [ 23444, 23450, 23739, 23764 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 32,
+    "Interface" : [ "144 (Bundle-Ether111, Telecom Italia Sparkle [main], 2001:41a8:500:2:0:0:0:42,195.22.215.229)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "128.221.146.17", "128.221.143.250", "128.221.140.88", "128.221.135.246" ],
+    "Port" : [ 1080 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 1,
+    "Interface" : [ "156 (HundredGigE0/0/0/0, R136, 2001:718:0:600:0:135:136:10,195.113.235.99)" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552259677_gc15.cesnet.cz_1212_src_ip_92.63.196.21",
+  "DetectTime" : 1552259677000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "67.205.216.43" ],
+    "Port" : [ 53587 ],
+    "Proto" : [ "tcp" ],
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 1,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.239.2", "143.166.167.151", "143.166.129.3", "143.166.66.217" ],
+    "Port" : [ 20004, 20020, 20035, 20050 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 32,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "695fe1d6-de75-42fc-af76-51b91998639f",
+  "DetectTime" : 1552259670712,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "174.177.19.95" ],
+    "Port" : [ 52608 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "f083e9b1-81b8-41ad-a8ea-8ff580bfbb58",
+  "DetectTime" : 1552259701821,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 54661 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "be5bf5b0-e539-48bb-8eed-9c396ff91ed9",
+  "DetectTime" : 1552259511587,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "117.77.185.139" ],
+    "Port" : [ 49726 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "2f902a2f-841d-40d4-b717-e778a72877c9",
+  "DetectTime" : 1552259646907,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "127.10.254.200" ],
+    "Port" : [ 50495 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552259717_gc15.cesnet.cz_1212_src_ip_218.75.37.20",
+  "DetectTime" : 1552259717000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "255.171.230.87" ],
+    "Port" : [ 23625, 23632, 23648, 23656 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 32,
+    "Interface" : [ "144 (Bundle-Ether111, Telecom Italia Sparkle [main], 2001:41a8:500:2:0:0:0:42,195.22.215.229)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "128.221.255.13", "128.221.153.70", "128.221.150.199", "128.221.145.78" ],
+    "Port" : [ 3128 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 1,
+    "Interface" : [ "156 (HundredGigE0/0/0/0, R136, 2001:718:0:600:0:135:136:10,195.113.235.99)" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "3e410722-0f88-4db2-b2f2-2b2afd47edc3",
+  "DetectTime" : 1552255800000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname607" ],
+    "IP4" : [ "128.121.126.203" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.62.31", "142.252.6.122", "142.252.92.142", "142.252.87.251", "142.252.106.209" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "ee0d56b9-f81e-43a2-99cf-f04fce5cf218",
+  "DetectTime" : 1552255800000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "124.55.119.174" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.186.17", "142.252.189.78", "142.252.189.66", "142.252.189.82", "142.252.189.85", "142.252.189.116", "142.252.189.128", "142.252.189.146", "142.252.189.150", "142.252.189.170" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552259823_gc15.cesnet.cz_1212_src_ip_92.63.196.21",
+  "DetectTime" : 1552259823000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "67.205.216.43" ],
+    "Port" : [ 53587 ],
+    "Proto" : [ "tcp" ],
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 1,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.53.223", "143.166.252.125", "143.166.203.123", "143.166.160.195" ],
+    "Port" : [ 20002, 20008, 20011, 20029 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 32,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "7e4bcdde-b9fb-4788-a7d9-a510c680569c",
+  "DetectTime" : 1552255800000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "67.218.192.13" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.215.191", "142.252.49.166", "142.252.80.115", "142.252.238.208", "142.252.48.255", "142.252.152.117", "142.252.38.75", "142.252.177.195", "142.252.81.151", "142.252.232.228" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "8375b979-b7bc-4442-9e9f-1648799b352c",
+  "DetectTime" : 1552255800000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.129.192.44" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.239.187", "142.252.165.238", "142.252.177.176", "142.252.177.241", "142.252.177.239", "142.252.176.244", "142.252.165.172", "142.252.177.157", "142.252.176.188", "142.252.43.235" ],
+    "Port" : [ 992 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "633147f7-6630-4a52-8d0b-0593d06a6a21",
+  "DetectTime" : 1552255800000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname1208" ],
+    "IP4" : [ "179.182.202.148" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.2.201", "142.252.192.206", "142.252.97.121", "142.252.166.122", "142.252.92.142", "142.252.232.203", "142.252.158.97", "142.252.87.4", "142.252.180.185", "142.252.60.144" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "14ce6fbd-a4cd-4157-9c86-806cc656104d",
+  "DetectTime" : 1552255800000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname300" ],
+    "IP4" : [ "224.90.249.168" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.163.198", "142.252.145.2", "142.252.208.201", "142.252.226.247", "142.252.251.28", "142.252.58.243", "142.252.92.141", "142.252.243.222", "142.252.142.177", "142.252.214.14" ],
+    "Port" : [ 81 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "0b7799c3-4599-4cad-a87a-86c4ca5bf680",
+  "DetectTime" : 1552255800000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname679" ],
+    "IP4" : [ "185.183.222.4" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.96.53", "142.252.0.64", "142.252.157.150", "142.252.72.55", "142.252.74.48", "142.252.223.21", "142.252.234.198", "142.252.106.206", "142.252.141.100", "142.252.66.203" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "e4049588-283a-44e5-8aaa-0e3d32e09de1",
+  "DetectTime" : 1552255800000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.192.59.243" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.158.39", "142.252.189.202", "142.252.190.175", "142.252.215.175", "142.252.190.229", "142.252.191.223", "142.252.191.237", "142.252.189.232", "142.252.216.138", "142.252.159.90" ],
+    "Port" : [ 5900 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "9f337504-2d7b-4307-a8a2-94b6effbf315",
+  "DetectTime" : 1552255800000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "226.153.85.129" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.60.189", "142.252.60.162", "142.252.13.230", "142.252.60.166", "142.252.60.197", "142.252.13.209", "142.252.72.60", "142.252.133.98", "142.252.133.120", "142.252.230.141" ],
+    "Port" : [ 21 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "2d94bcd3-f7e5-47fb-b8cf-1ec0fc7e813a",
+  "DetectTime" : 1552255800000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "124.55.119.175" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.26.139", "142.252.54.174", "142.252.220.58", "142.252.184.62", "142.252.157.72", "142.252.220.176", "142.252.230.226", "142.252.185.20", "142.252.5.142", "142.252.189.29" ],
+    "Port" : [ 11, 69, 102, 111, 123, 179, 391, 503, 623, 626, 880, 2323, 2375, 5000, 5060, 5986, 7547, 8080, 11211, 27017 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "bbcc1155-b495-40da-aa00-a49eb7c56835",
+  "DetectTime" : 1552255800000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname1083" ],
+    "IP4" : [ "49.135.226.161" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.84.38", "142.252.78.37", "142.252.179.61", "142.252.94.203", "142.252.59.162", "142.252.238.70", "142.252.75.172", "142.252.57.19", "142.252.237.56", "142.252.253.214" ],
+    "Port" : [ 443 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "2ea464af-8faa-4f5c-b2ba-f2392a06b7ba",
+  "DetectTime" : 1552255800000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "1.33.226.5" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.220.118", "142.252.140.40", "142.252.18.91", "142.252.170.53", "142.252.223.212", "142.252.249.62", "142.252.53.18", "142.252.120.66", "142.252.141.26", "142.252.137.193" ],
+    "Port" : [ 23 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "044355a1-4747-44f9-9195-2f078e860cdf",
+  "DetectTime" : 1552259961755,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "180.191.240.48" ],
+    "Port" : [ 59139 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "3e512474-f366-4dd5-ad4e-61d873f22e62",
+  "DetectTime" : 1552259983235,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 55222 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "a412303b-29cb-4af8-9bae-ce71cddba672",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "124.55.119.174" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.177.44", "142.252.185.25", "142.252.185.31", "142.252.185.30", "142.252.186.14", "142.252.186.15", "142.252.186.12", "142.252.186.10", "142.252.186.5", "142.252.186.2" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "35dee11d-f9a4-484b-bc2b-6002f14e289a",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname607" ],
+    "IP4" : [ "128.121.126.203" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.62.31", "142.252.6.122", "142.252.92.142", "142.252.87.251", "142.252.106.209" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552260076_gc15.cesnet.cz_1212_src_ip_92.63.196.21",
+  "DetectTime" : 1552260076000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "67.205.216.43" ],
+    "Port" : [ 53587 ],
+    "Proto" : [ "tcp" ],
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 1,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.196.41", "142.228.115.81", "142.228.220.199", "142.228.174.223" ],
+    "Port" : [ 20009, 20024, 20049, 20064 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 32,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "43954cf6-40ab-4557-9516-6d855ffb928d",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname1083" ],
+    "IP4" : [ "49.135.226.161" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.93.170", "142.252.39.130", "142.252.13.199", "142.252.254.112", "142.252.129.204", "142.252.38.8", "142.252.230.6", "142.252.95.208", "142.252.13.136", "142.252.44.1" ],
+    "Port" : [ 443 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "b35db8ca-009a-4f8e-88d5-54b050e138d2",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "1.33.226.5" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.191.130", "142.252.173.81", "142.252.253.200", "142.252.202.248", "142.252.112.218", "142.252.99.74", "142.252.92.17", "142.252.127.203", "142.252.37.200", "142.252.122.173" ],
+    "Port" : [ 23 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "74459573-2998-4209-b9f8-2e123be7608e",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.192.59.136" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.144.174", "142.252.239.122", "142.252.144.18", "142.252.84.11", "142.252.223.50", "142.252.194.248", "142.252.84.222", "142.252.47.0", "142.252.84.221", "142.252.144.163" ],
+    "Port" : [ 22, 68, 80, 443 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "7fe8b1d9-2210-48ce-8a91-c0c5dcfbd388",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname679" ],
+    "IP4" : [ "185.183.222.4" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.201.132", "142.252.67.82", "142.252.67.151", "142.252.189.15", "142.252.113.242", "142.252.205.231", "142.252.50.59", "142.252.115.187", "142.252.183.126", "142.252.57.137" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "8b4086e5-a94e-412d-bf83-4ecd24789f48",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname300" ],
+    "IP4" : [ "224.90.249.168" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.92.23", "142.252.123.83", "142.252.163.105", "142.252.204.151", "142.252.149.176", "142.252.111.139", "142.252.204.55", "142.252.218.60", "142.252.133.240", "142.252.11.162" ],
+    "Port" : [ 81 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "ff18b332-ac59-42ef-8c43-b0372f0b89c8",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "165.98.153.1" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.196.227", "142.252.75.0", "142.252.215.195", "142.252.36.40", "142.252.75.203", "142.252.205.86", "142.252.36.145", "142.252.215.67", "142.252.37.118", "142.252.215.74" ],
+    "Port" : [ 623 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "95c30e11-a629-434b-a95c-4d5079e18fdf",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.192.59.243" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.226.51", "142.252.231.218", "142.252.231.242", "142.252.231.252", "142.252.168.155", "142.252.231.251", "142.252.231.173", "142.252.231.104", "142.252.168.203", "142.252.243.110" ],
+    "Port" : [ 5900 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "2ec039ec-bd1b-4891-9a06-750dcd2c3a9a",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "146.93.191.223" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.210.211", "142.252.210.193", "142.252.208.234", "142.252.210.131", "142.252.211.163", "142.252.211.126", "142.252.209.116", "142.252.208.47", "142.252.210.194", "142.252.210.121" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "a35a1e29-86d0-4f3e-a6be-4c5aa298d48c",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname1208" ],
+    "IP4" : [ "179.182.202.148" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.88.19", "142.252.248.21", "142.252.75.148", "142.252.232.202", "142.252.248.210", "142.252.17.196", "142.252.0.90", "142.252.151.178", "142.252.1.255", "142.252.85.142" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "99610580-a585-45c2-be3e-3f7a514bc84f",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "67.218.192.13" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.72.53", "142.252.78.52", "142.252.105.155", "142.252.39.212", "142.252.27.1", "142.252.44.72", "142.252.217.75", "142.252.131.238", "142.252.182.8", "142.252.72.90" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "140f8b38-443e-4f4c-ba06-c48918923f69",
+  "DetectTime" : 1552256100000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "124.55.119.175" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.185.243", "142.252.26.199", "142.252.121.31", "142.252.247.117", "142.252.173.106", "142.252.173.175", "142.252.148.141", "142.252.91.88", "142.252.185.113", "142.252.121.69" ],
+    "Port" : [ 53, 69, 102, 111, 119, 123, 179, 503, 554, 623, 626, 880, 2323, 2375, 5000, 5060, 7547, 8080, 11211, 27017 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552260220_gc15.cesnet.cz_1212_src_ip_92.63.196.21",
+  "DetectTime" : 1552260220000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "67.205.216.43" ],
+    "Port" : [ 53587 ],
+    "Proto" : [ "tcp" ],
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 1,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.55.5", "143.166.251.170", "143.166.216.146", "143.166.185.157" ],
+    "Port" : [ 20007, 20015, 20021, 20022 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 32,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "85680560-b1b6-4a89-b485-293cac2cc50d",
+  "DetectTime" : 1552260030982,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "241.240.89.232" ],
+    "Port" : [ 61186 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "900a5771-2f02-481c-a60e-a3628687c768",
+  "DetectTime" : 1552260274634,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 50639 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "9589a3c1-1545-43c3-890b-e50b2810b9b6",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname607" ],
+    "IP4" : [ "128.121.126.203" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.62.31", "142.252.6.122", "142.252.92.142", "142.252.87.251", "142.252.106.209" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "bf5924df-1e29-440f-97ae-17fe957cfe27",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "124.55.119.174" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.122.253", "142.252.122.249", "142.252.123.6", "142.252.123.8", "142.252.123.30", "142.252.123.25", "142.252.123.63", "142.252.123.47", "142.252.123.44", "142.252.123.35" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552260366_gc15.cesnet.cz_1212_src_ip_92.63.196.21",
+  "DetectTime" : 1552260366000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "67.205.216.43" ],
+    "Port" : [ 53587 ],
+    "Proto" : [ "tcp" ],
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 1,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.51.81", "143.166.102.167", "143.166.124.13", "143.166.203.255" ],
+    "Port" : [ 20007, 20011, 20015, 20016 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 32,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552260377_gc15.cesnet.cz_1212_src_ip_89.248.174.3",
+  "DetectTime" : 1552260377000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "69.255.87.252" ],
+    "Port" : [ 34128, 34611, 35367, 37417 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 21,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "226.152.172.41", "226.152.186.54", "226.152.180.23", "226.152.28.40" ],
+    "Port" : [ 4089 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 21,
+    "PortCount" : 1,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "d507f073-ab9f-44ce-bf1d-22cf3d5c4ed2",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "1.33.226.5" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.204.162", "142.252.214.236", "142.252.60.249", "142.252.158.106", "142.252.52.6", "142.252.44.27", "142.252.161.172", "142.252.111.175", "142.252.134.214", "142.252.189.98" ],
+    "Port" : [ 23 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "b2a506ad-53d7-494e-ac3f-4e9af228f7cd",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname1083" ],
+    "IP4" : [ "49.135.226.161" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.133.184", "142.252.44.58", "142.252.7.144", "142.252.13.238", "142.252.94.36", "142.252.44.101", "142.252.79.206", "142.252.112.7", "142.252.237.178", "142.252.63.191" ],
+    "Port" : [ 443 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "834414d7-943d-4ae8-ba6b-34708678d114",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname1208" ],
+    "IP4" : [ "179.182.202.148" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.23.62", "142.252.121.254", "142.252.120.38", "142.252.221.51", "142.252.75.246", "142.252.223.253", "142.252.207.254", "142.252.6.58", "142.252.169.212", "142.252.158.211" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "75050704-f212-40fb-b306-018e98285dc4",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "146.93.191.223" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.194.151", "142.252.195.150", "142.252.194.29", "142.252.195.216", "142.252.192.244", "142.252.192.69", "142.252.192.125", "142.252.193.135", "142.252.192.144", "142.252.193.109" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "fc2129bf-cd9c-4898-bc49-487e97cf0315",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.129.192.44" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.111.167", "142.252.101.0", "142.252.208.69", "142.252.101.51", "142.252.101.58", "142.252.132.185", "142.252.101.11", "142.252.111.113", "142.252.132.166", "142.252.111.172" ],
+    "Port" : [ 992 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "6ef2b48e-678d-4872-a204-efbf8fb4edb3",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "67.205.217.7" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.88.6", "142.252.88.41", "142.252.90.19", "142.252.117.160", "142.252.2.91", "142.252.88.51", "142.252.88.93", "142.252.88.189", "142.252.159.196", "142.252.2.199" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1ed82a30-fb82-4368-a56d-40d0a1c9f7a5",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname300" ],
+    "IP4" : [ "224.90.249.168" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.18.206", "142.252.173.35", "142.252.71.213", "142.252.248.255", "142.252.153.119", "142.252.53.155", "142.252.198.204", "142.252.221.207", "142.252.172.0", "142.252.172.189" ],
+    "Port" : [ 81 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "ad6ea4be-f66f-409a-9f46-d64c776c43ce",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Attempt.Login" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname1276" ],
+    "IP4" : [ "249.46.73.15" ],
+    "Proto" : [ "tcp", "ssh" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.58.192" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp", "ssh" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "15cbbb96-35dc-4b08-913b-7249f4409017",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname679" ],
+    "IP4" : [ "185.183.222.4" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.123.56", "142.252.174.69", "142.252.3.84", "142.252.181.72", "142.252.173.60", "142.252.229.71", "142.252.12.4", "142.252.212.82", "142.252.62.119", "142.252.194.92" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "044b3109-6d1a-4fb5-9861-bf30c93d531c",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "67.218.192.13" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.157.66", "142.252.191.163", "142.252.56.148", "142.252.118.64", "142.252.157.148", "142.252.194.81", "142.252.157.51", "142.252.48.173", "142.252.159.197", "142.252.123.160" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1e7ba044-591f-418c-bb71-47952e6a1292",
+  "DetectTime" : 1552256400000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "124.55.119.173" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.213.38", "142.252.77.210", "142.252.254.228", "142.252.253.53", "142.252.77.172", "142.252.253.144", "142.252.77.149", "142.252.253.125", "142.252.253.159", "142.252.253.113" ],
+    "Port" : [ 49, 104, 113, 175, 564, 2376 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552260508_gc15.cesnet.cz_1212_src_ip_92.63.196.21",
+  "DetectTime" : 1552260508000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "67.205.216.43" ],
+    "Port" : [ 53587 ],
+    "Proto" : [ "tcp" ],
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 1,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.116.6", "143.166.188.51", "143.166.175.170", "143.166.158.36" ],
+    "Port" : [ 20001, 20004, 20005, 20008 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 32,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "0a512c6e-9e8d-4e1c-a36f-febd4a22604d",
+  "DetectTime" : 1552260507746,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "239.157.25.66" ],
+    "Port" : [ 58028 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "24ea317e-c274-4829-950c-827e9db16d1e",
+  "DetectTime" : 1552260502353,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "156.31.84.32" ],
+    "Port" : [ 63384 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "9bd1945e-a94e-467a-b458-f6dd365667a1",
+  "DetectTime" : 1552260408953,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "191.237.6.57" ],
+    "Port" : [ 57872 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "ea609ba0-f394-4673-b222-7b796700489f",
+  "DetectTime" : 1552260402865,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "68.243.15.30" ],
+    "Port" : [ 2924 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "cdebe166-0ec0-4e15-8b64-fd4da50bf894",
+  "DetectTime" : 1552260344327,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "185.58.160.43" ],
+    "Port" : [ 51807 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 445 ],
+    "Proto" : [ "tcp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "d4a75027-52cd-41c7-a7f4-8a2b7708c909",
+  "DetectTime" : 1552260571600,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "227.253.185.165" ],
+    "Port" : [ 61206 ],
+    "Proto" : [ "udp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "192.0.0.0" ],
+    "Port" : [ 5060 ],
+    "Proto" : [ "udp" ],
+    "Anonymised" : true
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.hugo.haas_dionaea",
+    "Type" : [ "Connection", "Protocol", "Honeypot" ],
+    "SW" : [ "Dionaea" ],
+    "AggrWin" : "00:05:00"
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "bdcacda5-8096-47f3-9319-bba5e2faf0a4",
+  "DetectTime" : 1552256700000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "124.55.119.174" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.122.254", "142.252.122.253", "142.252.122.251", "142.252.123.0", "142.252.123.1", "142.252.123.4", "142.252.123.9", "142.252.123.10", "142.252.123.11", "142.252.123.13" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1563803c-e8d9-4542-ba28-b62137ccefe2",
+  "DetectTime" : 1552256700000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname607" ],
+    "IP4" : [ "128.121.126.203" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.62.31", "142.252.6.122", "142.252.92.142", "142.252.87.251", "142.252.106.209" ],
+    "Proto" : [ "sip" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "1552260680_gc15.cesnet.cz_1212_src_ip_89.248.168.51",
+  "DetectTime" : 1552260680000,
+  "Category" : [ "Anomaly.Traffic" ],
+  "Source" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "69.255.80.108" ],
+    "Port" : [ 33333, 33596, 33766, 33801 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "PortCount" : 32,
+    "Interface" : [ "90553 (Bundle-Ether110, AMS-IX 2x10GE, 2001:7f8:1:0:0:a500:2852:1,80.249.209.106)" ]
+  } ],
+  "Target" : [ {
+    "Type" : [ "Incomplete" ],
+    "IP4" : [ "143.166.103.237", "143.166.127.139", "143.166.112.138", "143.166.119.108" ],
+    "Port" : [ 6346 ],
+    "Proto" : [ "tcp" ],
+    "Note" : "Counts are measured up to 32 distinct values; arrays are cropped to 4 distinct values.",
+    "InterfaceCount" : 1,
+    "ProtoCount" : 1,
+    "IP4Count" : 32,
+    "PortCount" : 1,
+    "Interface" : [ "0" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.cesnet.ftas",
+    "Type" : [ "Relay" ]
+  }, {
+    "Name" : "cz.cesnet.gc15",
+    "SW" : [ "FTAS" ],
+    "Tags" : [ "Flow" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "acf069c8-0b28-422b-88ae-f46b1c638757",
+  "DetectTime" : 1552256700000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "IP4" : [ "124.55.119.173" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.131.226", "142.252.159.56", "142.252.159.109", "142.252.38.97", "142.252.237.168", "142.252.237.183", "142.252.159.164", "142.252.38.232", "142.252.5.105", "142.252.159.44" ],
+    "Port" : [ 49, 104, 113, 175, 564, 2376 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "a42d108b-36ff-4923-b0b1-f2af493d6f7a",
+  "DetectTime" : 1552256700000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname1208" ],
+    "IP4" : [ "179.182.202.148" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.14.212", "142.252.104.75", "142.252.94.197", "142.252.218.156", "142.252.248.247", "142.252.99.39", "142.252.122.66", "142.252.5.47", "142.252.118.148", "142.252.90.83" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "d2dec2cf-ae63-4ac1-95bd-38bc56b96a43",
+  "DetectTime" : 1552256700000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname300" ],
+    "IP4" : [ "224.90.249.168" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.136.245", "142.252.246.176", "142.252.189.21", "142.252.9.51", "142.252.164.247", "142.252.95.23", "142.252.149.53", "142.252.160.120", "142.252.12.225", "142.252.8.243" ],
+    "Port" : [ 81 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+}, {
+  "Format" : "IDEA0",
+  "ID" : "ee22cc87-cb01-4ffe-a415-176eb0918449",
+  "DetectTime" : 1552256700000,
+  "Category" : [ "Recon.Scanning" ],
+  "Source" : [ {
+    "Hostname" : [ "hostname679" ],
+    "IP4" : [ "185.183.222.4" ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Target" : [ {
+    "IP4" : [ "142.252.35.6", "142.252.51.169", "142.252.97.87", "142.252.133.108", "142.252.129.102", "142.252.171.247", "142.252.206.210", "142.252.178.219", "142.252.232.54", "142.252.251.192" ],
+    "Port" : [ 22 ],
+    "Proto" : [ "tcp" ]
+  } ],
+  "Node" : [ {
+    "Name" : "cz.muni.ics.csirt.flowmon_ads",
+    "Type" : [ "Relay" ]
+  } ]
+} ]
