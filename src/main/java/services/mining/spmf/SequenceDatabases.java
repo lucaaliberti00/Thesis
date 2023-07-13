@@ -5,6 +5,7 @@ import commons.idea.aida.AidaUtils;
 import commons.mining.model.KeyType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import services.matching.IdeaSourceIpComparator;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -25,6 +26,7 @@ public class SequenceDatabases {
 		long timeStart = System.currentTimeMillis();
 
 		List<Idea> ideas = readIdeasFromFormattedFile(new File(filePath));
+		ideas.sort(new IdeaSourceIpComparator());
 		SequenceDatabaseBuilder databaseBuilder = new SequenceDatabaseBuilder(keyType);
 
 		for (Idea idea : ideas) {

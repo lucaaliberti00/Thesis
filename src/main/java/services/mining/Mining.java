@@ -79,7 +79,7 @@ public class Mining {
             rules.add(rule);
         }
 
-        try (FileWriter writer = new FileWriter("data\\rules\\ruleDBdataset")) {
+        try (FileWriter writer = new FileWriter("data\\rules\\ruleDBordered")) {
             for (Rule rule : rules) {
                 String ruleString = Rules.toSpmf(rule);
                 String line = String.format("%s %d %d %.4f %s %s\n",

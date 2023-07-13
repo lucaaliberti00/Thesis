@@ -32,4 +32,12 @@ public class Rule {
     public int getSupport() {
         return support;
     }
+
+    @Override
+    public String toString() {
+        return "Rule{" +
+                "antecedent=" + antecedent +
+                ", consequent=" + consequent +
+                '}';
+    }
 }

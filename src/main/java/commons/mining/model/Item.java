@@ -124,4 +124,15 @@ public class Item {
         return parts;
     }
 
+    public void setNodeName(String nodeName) {
+        this.nodeName = nodeName;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
 }

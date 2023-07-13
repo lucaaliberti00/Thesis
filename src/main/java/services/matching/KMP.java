@@ -49,17 +49,17 @@ public class KMP {
 
         int i = 0;
         int j = 0;
-        String expectedSourceIp = text.get(i).getSource().get(0).getIP4().get(0);
+        //String expectedSourceIp = text.get(i).getSource().get(0).getIP4().get(0);
 
 
         while (i < n) {
             Item textItem = new Item(text.get(i)); // Creazione oggetto Item da Idea
 
-            if (j==0)
-                expectedSourceIp = text.get(i).getSource().get(0).getIP4().get(0); // Indirizzo IP atteso nel pattern
+           // if (j==0)
+            //    expectedSourceIp = text.get(i).getSource().get(0).getIP4().get(0); // Indirizzo IP atteso nel pattern
 
             // Controllo che gli oggetti Idea associati abbiano lo stesso indirizzo IP
-            if (textItem.equals(pattern.get(j)) && text.get(i).getSource().get(0).getIP4().get(0).equals(expectedSourceIp)) {
+            if (textItem.equals(pattern.get(j)) /*&& text.get(i).getSource().get(0).getIP4().get(0).equals(expectedSourceIp)*/) {
                 i++;
                 j++;
                 if (j == m) {
@@ -80,11 +80,12 @@ public class KMP {
 
 
     public static void main(String[] args) {
-        List<Idea> text = Idea.readIdeasFromFormattedFile(new File("data/sanitized/test.idea")); // Metodo per leggere la lista di Idea
+        List<Idea> text = Idea.readIdeasFromFormattedFile(new File("data/sanitized/train.idea")); // Metodo per leggere la lista di Idea
         text.sort(new IdeaSourceIpComparator());
 
         List<Item> pattern = new ArrayList<>();
-        pattern.add(new Item("cz.cesnet.tarpit", "Recon.Scanning", 8000));
+        pattern.add(new Item("cz.cesnet.nemea.hoststats", "Recon.Scanning", null));
+        //pattern.add(new Item("cz.cesnet.nemea.hoststats", "Recon.Scanning", null));
         //pattern.add(new Item("cz.cesnet.tarpit", "Recon.Scanning", 8080));
         //pattern.add(new Item("cz.cesnet.tarpit", "Recon.Scanning", 8080));
 
