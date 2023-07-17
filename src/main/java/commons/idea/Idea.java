@@ -846,7 +846,7 @@ public class Idea {
 
     public static List<Idea> readIdeasFromRawFile(File fileName) {
         ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.enable(SerializationFeature.INDENT_OUTPUT); // Aggiungi questa riga per formattare l'output
+        //objectMapper.enable(SerializationFeature.INDENT_OUTPUT); // Aggiungi questa riga per formattare l'output
         List<Idea> ideas = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;

@@ -18,10 +18,10 @@ import java.util.concurrent.TimeUnit;
 public class DatabaseMatcher {
 
     public static void main(String[] args) {
-        String rulesFile = "data/rules/ruleDB"; // Percorso del file contenente le regole
+        String rulesFile = "data/rules/ruleDBaggregated"; // Percorso del file contenente le regole
         List<Rule> rules = readRulesFromFile(rulesFile);
 
-        String inputFile = "data/sanitized/train.idea"; // Percorso del file contenente le idee
+        String inputFile = "data/aggregated/aggregated_test.idea"; // Percorso del file contenente le idee
         //List<Idea> ideas = Idea.readIdeasFromFormattedFile(new File(inputFile));
         IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile(inputFile, KeyType.SRC_IPV4);
         Map<Item, Integer> invertedMap = inverter(sequenceDb.getItemMapping());
@@ -61,11 +61,12 @@ public class DatabaseMatcher {
                 }
 
             }
-            System.out.println("\t----\t");
-            System.out.println("Rule" + r);
-            System.out.println("Support " + seq_ok);
             double confidence = (double) cons_count / ant_count;
-            System.out.println("Confidence " + confidence);
+            System.out.println(r);
+            System.out.println("Supporto: " + seq_ok);
+            System.out.println("Mining Supporto: " + r.getSupport());
+            System.out.println("Confidenza: " + confidence);
+            System.out.println("Mining Confidenza: " + r.getConfidence());
             System.out.println("\t----\t");
 
         }
@@ -74,17 +75,20 @@ public class DatabaseMatcher {
     }
 
     private static int getLastMatch(List<Integer> firstList, List<Integer> secondList) {
+
+        List<Integer> temp = new ArrayList<>(secondList);
+
         int index = -1;
 
         for (int i = 0; i < firstList.size(); i++) {
-            if (secondList.size() == 0)
+            if (temp.size() == 0)
                 return index;
 
             int item = firstList.get(i);
 
-            if (secondList.contains(item)) {
+            if (temp.contains(item)) {
                 try {
-                    secondList.remove(Integer.valueOf(item));
+                    temp.remove(Integer.valueOf(item));
                 }catch (Exception e){
                     e.printStackTrace();
                 }
@@ -92,13 +96,13 @@ public class DatabaseMatcher {
             }
 
         }
-        if (secondList.size() != 0)
+        if (temp.size() != 0)
             return -1;
         else
             return index;
     }
 
-    private static List<Integer> itemToInt(List<Item> list, Map<Item, Integer> invertedMap) {
+    public static List<Integer> itemToInt(List<Item> list, Map<Item, Integer> invertedMap) {
         List<Integer> listInt = new ArrayList<>();
         for (Item i : list) {
             if (invertedMap.get(i) == null) {
@@ -110,7 +114,7 @@ public class DatabaseMatcher {
         return listInt;
     }
 
-    private static Map<Item, Integer> inverter(Map<Integer, Item> itemMapping) {
+    public static Map<Item, Integer> inverter(Map<Integer, Item> itemMapping) {
         Map<Item, Integer> invertedMap = new HashMap<>();
         for (Map.Entry<Integer, Item> entry : itemMapping.entrySet()) {
             invertedMap.put(entry.getValue(), entry.getKey());
@@ -119,7 +123,7 @@ public class DatabaseMatcher {
     }
 
 
-    private static List<Rule> readRulesFromFile(String filename) {
+    public static List<Rule> readRulesFromFile(String filename) {
         List<Rule> rules = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
@@ -140,7 +144,7 @@ public class DatabaseMatcher {
         if (parts.length == 2) {
             String antecedentStr = parts[0];
             String consequentStr = parts[1].split(" ")[0];
-            int support = new Integer(parts[1].split(" ")[2]);
+            int support = new Integer(parts[1].split(" ")[1]);
             double confidence = new Double(parts[1].split(" ")[3].replace(',', '.'));
 
             Set<Item> antecedent = parseItems(antecedentStr);

@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 import static commons.idea.Idea.readIdeasFromFormattedFile;
+import static commons.idea.Idea.readIdeasFromRawFile;
 
 public class SequenceDatabases {
 
@@ -25,8 +26,9 @@ public class SequenceDatabases {
 
 		long timeStart = System.currentTimeMillis();
 
-		List<Idea> ideas = readIdeasFromFormattedFile(new File(filePath));
-		ideas.sort(new IdeaSourceIpComparator());
+		//List<Idea> ideas = readIdeasFromFormattedFile(new File(filePath));
+		List<Idea> ideas = readIdeasFromRawFile(new File(filePath));
+
 		SequenceDatabaseBuilder databaseBuilder = new SequenceDatabaseBuilder(keyType);
 
 		for (Idea idea : ideas) {

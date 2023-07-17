@@ -84,9 +84,9 @@ public class KMP {
         text.sort(new IdeaSourceIpComparator());
 
         List<Item> pattern = new ArrayList<>();
-        pattern.add(new Item("cz.cesnet.nemea.hoststats", "Recon.Scanning", null));
         //pattern.add(new Item("cz.cesnet.nemea.hoststats", "Recon.Scanning", null));
-        //pattern.add(new Item("cz.cesnet.tarpit", "Recon.Scanning", 8080));
+        //pattern.add(new Item("cz.cesnet.nemea.hoststats", "Recon.Scanning", null));
+        pattern.add(new Item("cz.cesnet.tarpit", "Recon.Scanning", 8000));
         //pattern.add(new Item("cz.cesnet.tarpit", "Recon.Scanning", 8080));
 
         List<Integer> occurrences = kmp(text, pattern);

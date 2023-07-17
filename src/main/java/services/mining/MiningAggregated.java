@@ -33,7 +33,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-public class Mining {
+public class MiningAggregated {
 
     private static final Logger logger = LoggerFactory.getLogger(Mining.class);
     private double minConf = 0.5;
@@ -41,7 +41,7 @@ public class Mining {
     private boolean help;
 
     public static void main(String[] args) {
-        Mining mining = new Mining();
+        MiningAggregated mining = new MiningAggregated();
         mining.run();
     }
 
@@ -50,7 +50,7 @@ public class Mining {
     public void run() {
 
         // Create sequential database
-        IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile("data\\sanitized\\train.idea", KeyType.SRC_IPV4);
+        IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile("data\\aggregated\\aggregated_train.idea", KeyType.SRC_IPV4);
 
         // Run algorithm
         logger.info("Running TopSeqRules algorithm");
@@ -79,7 +79,7 @@ public class Mining {
             rules.add(rule);
         }
 
-        try (FileWriter writer = new FileWriter("data\\rules\\ruleDBordered")) {
+        try (FileWriter writer = new FileWriter("data\\rules\\ruleDBaggregated")) {
             for (Rule rule : rules) {
                 String ruleString = Rules.toSpmf(rule);
                 String line = String.format("%s %d %d %.4f %s %s\n",
@@ -92,3 +92,4 @@ public class Mining {
         }
     }
 }
+
