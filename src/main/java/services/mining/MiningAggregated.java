@@ -42,15 +42,16 @@ public class MiningAggregated {
 
     public static void main(String[] args) {
         MiningAggregated mining = new MiningAggregated();
-        mining.run();
+        String path = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-11\\aggregated_2019-03-11.json";
+        mining.run(path);
     }
 
 
 
-    public void run() {
+    public void run(String path) {
 
         // Create sequential database
-        IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile("data\\aggregated\\aggregated_train.idea", KeyType.SRC_IPV4);
+        IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile(path, KeyType.SRC_IPV4);
 
         // Run algorithm
         logger.info("Running TopSeqRules algorithm");
@@ -79,7 +80,7 @@ public class MiningAggregated {
             rules.add(rule);
         }
 
-        try (FileWriter writer = new FileWriter("data\\rules\\ruleDBaggregated")) {
+        try (FileWriter writer = new FileWriter("data\\rules\\ruleDB_2019-03-11")) {
             for (Rule rule : rules) {
                 String ruleString = Rules.toSpmf(rule);
                 String line = String.format("%s %d %d %.4f %s %s\n",

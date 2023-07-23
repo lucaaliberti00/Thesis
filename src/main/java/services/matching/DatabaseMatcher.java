@@ -4,8 +4,7 @@ import ca.pfv.spmf.input.sequence_database_array_integers.Sequence;
 import commons.mining.model.Item;
 import commons.mining.model.KeyType;
 import commons.mining.model.Rule;
-import scala.Array;
-import scala.Int;
+
 import services.mining.spmf.IdeaSequenceDatabase;
 import services.mining.spmf.SequenceDatabases;
 
@@ -18,10 +17,10 @@ import java.util.concurrent.TimeUnit;
 public class DatabaseMatcher {
 
     public static void main(String[] args) {
-        String rulesFile = "data/rules/ruleDBaggregated"; // Percorso del file contenente le regole
+        String rulesFile = "data/rules/ruleDB_2019-03-11"; // Percorso del file contenente le regole
         List<Rule> rules = readRulesFromFile(rulesFile);
 
-        String inputFile = "data/aggregated/aggregated_test.idea"; // Percorso del file contenente le idee
+        String inputFile = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-11\\aggregated_2019-03-11.json"; // Percorso del file contenente le idee
         //List<Idea> ideas = Idea.readIdeasFromFormattedFile(new File(inputFile));
         IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile(inputFile, KeyType.SRC_IPV4);
         Map<Item, Integer> invertedMap = inverter(sequenceDb.getItemMapping());
