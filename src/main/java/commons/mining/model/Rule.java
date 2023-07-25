@@ -33,6 +33,14 @@ public class Rule {
         return support;
     }
 
+    public void setSupport(int support) {
+        this.support = support;
+    }
+
+    public void setConfidence(double confidence) {
+        this.confidence = confidence;
+    }
+
     @Override
     public String toString() {
         return "Rule{" +

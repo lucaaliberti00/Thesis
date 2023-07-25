@@ -19,17 +19,19 @@ public class Matching {
     public static void main(String[] args) {
         ArrayList<Double> Top10Confidence = new ArrayList<>();
 
-        String rulesFile = "data\\rules\\ruleDB_2019-03-13"; // Percorso del file contenente le regole
+        String rulesFile = "data/rules/FullSimulation/TopSeqRules/ruleDB_2019-03-17"; // Percorso del file contenente le regole
         List<Rule> rules = readRulesFromFile(rulesFile);
 
-        String inputFile = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-13\\aggregated_2019-03-13.json"; // Percorso del file contenente le idee
-        //List<Idea> ideas = Idea.readIdeasFromFormattedFile(new File(inputFile));
+        String inputFile = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-17\\aggregated_2019-03-17.json"; // Percorso del file contenente le idee
+
         IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile(inputFile, KeyType.SRC_IPV4);
         Map<Item, Integer> invertedMap = inverter(sequenceDb.getItemMapping());
 
         List<Sequence> seqs = sequenceDb.getDatabase().getSequences();
 
         for (Rule r : rules) {
+
+            //r = rules.get(4);
             List<Item> antecedent = new ArrayList<>(r.getAntecedent());
             List<Integer> antecedentInt = itemToInt(antecedent, invertedMap);
 
@@ -70,7 +72,7 @@ public class Matching {
             System.out.println("Mining Confidenza: " + r.getConfidence());
             System.out.println("\t----\t");
 
-            Top10Confidence.add(r.getConfidence());
+            Top10Confidence.add(confidence);
         }
 
         Top10Confidence.sort(Collections.reverseOrder());
@@ -86,6 +88,11 @@ public class Matching {
 
         System.out.println("Top 10 Confidence Mean: " + averageOfFirst10);
 
+    }
+
+    public static List<Rule> run(String rulesFile, String inputFile, boolean verbose){
+
+        return null;
     }
 
     private static int getLastMatch(List<Integer> firstList, List<Integer> secondList) {
@@ -121,6 +128,7 @@ public class Matching {
         for (Item i : list) {
             if (invertedMap.get(i) == null) {
                 i.setNodeName(i.getNodeName().replaceAll(" ", ""));
+                i.setNodeName(i.getCategory().replaceAll(" ", ""));
             }
             listInt.add(invertedMap.get(i));
         }
@@ -180,12 +188,19 @@ public class Matching {
             if(splitted.length > 3){
                 node = splitted[0];
                 for(int i=1; i<splitted.length-1; i++)
-                    alert = alert + "_" + splitted[i];
+                    if (Character.isUpperCase(splitted[i].charAt(0)))
+                        alert = alert + "_" + splitted[i];
+                    else
+                        node = node + "_" + splitted[i];
             }else{
                 node = splitted[0];
                 alert = splitted[1];
             }
             port = splitted[splitted.length -1];
+
+            if (alert.startsWith("_"))
+                alert = alert.replace("_", " ");
+
             if (!Objects.equals(port, "None"))
                 items.add(new Item(node, alert, new Integer(port)));
             else
