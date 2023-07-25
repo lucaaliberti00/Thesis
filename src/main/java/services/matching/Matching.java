@@ -14,13 +14,15 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-public class DatabaseMatcher {
+public class Matching {
 
     public static void main(String[] args) {
-        String rulesFile = "data/rules/ruleDB_2019-03-11"; // Percorso del file contenente le regole
+        ArrayList<Double> Top10Confidence = new ArrayList<>();
+
+        String rulesFile = "data\\rules\\ruleDB_2019-03-13"; // Percorso del file contenente le regole
         List<Rule> rules = readRulesFromFile(rulesFile);
 
-        String inputFile = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-11\\aggregated_2019-03-11.json"; // Percorso del file contenente le idee
+        String inputFile = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-13\\aggregated_2019-03-13.json"; // Percorso del file contenente le idee
         //List<Idea> ideas = Idea.readIdeasFromFormattedFile(new File(inputFile));
         IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile(inputFile, KeyType.SRC_IPV4);
         Map<Item, Integer> invertedMap = inverter(sequenceDb.getItemMapping());
@@ -68,8 +70,21 @@ public class DatabaseMatcher {
             System.out.println("Mining Confidenza: " + r.getConfidence());
             System.out.println("\t----\t");
 
+            Top10Confidence.add(r.getConfidence());
         }
 
+        Top10Confidence.sort(Collections.reverseOrder());
+
+        int numElementsToAverage = Math.min(10, Top10Confidence.size());
+        double sumOfFirst10 = 0.0;
+
+        for (int i = 0; i < numElementsToAverage; i++) {
+            sumOfFirst10 += Top10Confidence.get(i);
+        }
+
+        double averageOfFirst10 = sumOfFirst10 / numElementsToAverage;
+
+        System.out.println("Top 10 Confidence Mean: " + averageOfFirst10);
 
     }
 
@@ -158,10 +173,23 @@ public class DatabaseMatcher {
         Set<Item> items = new HashSet<>();
         String[] itemStrs = itemsStr.split(",");
         for (String itemStr : itemStrs) {
-            if (!Objects.equals(itemStr.split("_")[2], "None"))
-                items.add(new Item(itemStr.split("_")[0], itemStr.split("_")[1], new Integer(itemStr.split("_")[2])));
+            String[] splitted = itemStr.split("_");
+            String node = "";
+            String alert = "";
+            String port = "";
+            if(splitted.length > 3){
+                node = splitted[0];
+                for(int i=1; i<splitted.length-1; i++)
+                    alert = alert + "_" + splitted[i];
+            }else{
+                node = splitted[0];
+                alert = splitted[1];
+            }
+            port = splitted[splitted.length -1];
+            if (!Objects.equals(port, "None"))
+                items.add(new Item(node, alert, new Integer(port)));
             else
-                items.add(new Item(itemStr.split("_")[0], itemStr.split("_")[1], null));
+                items.add(new Item(node, alert, null));
 
 
         }

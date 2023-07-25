@@ -1,4 +1,4 @@
-package services.matching;
+package services.matching.useless;
 
 import commons.idea.Idea;
 import commons.mining.model.Item;
@@ -6,9 +6,6 @@ import commons.mining.model.Item;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
-import static commons.idea.Idea.readIdeasFromFormattedFile;
 
 public class KMP {
 

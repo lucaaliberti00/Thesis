@@ -1,4 +1,4 @@
-package services.matching;
+package services.matching.useless;
 import ca.pfv.spmf.input.sequence_database_array_integers.Sequence;
 import commons.mining.model.Item;
 import commons.mining.model.KeyType;
@@ -8,7 +8,7 @@ import services.mining.spmf.SequenceDatabases;
 
 import java.util.*;
 
-import static services.matching.DatabaseMatcher.*;
+import static services.matching.Matching.*;
 
 public class SequenceMetricsCalculator {
     public static double calculateConfidence(List<Integer> antecedent, List<Integer> consequent, List<List<Integer>> sequences) {

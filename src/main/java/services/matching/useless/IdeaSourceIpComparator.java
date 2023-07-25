@@ -1,4 +1,4 @@
-package services.matching;
+package services.matching.useless;
 
 import commons.idea.Idea;
 

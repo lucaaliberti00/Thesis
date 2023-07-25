@@ -1,4 +1,4 @@
-package Analysis;
+package analysis;
 
 import commons.idea.Idea;
 
@@ -7,13 +7,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
 import static commons.idea.Idea.readIdeasFromRawFile;
 
-public class FileLineCounter {
+public class SimulationReader {
 
     public static int countLines(String filename) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
@@ -26,9 +25,9 @@ public class FileLineCounter {
     }
 
     public static void main(String[] args) throws IOException {
-        String file1Path = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-15\\observations_2019-03-15.json";
-        String file2Path = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-15\\predictions_2019-03-15.json";
-        String file3Path = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-16\\aggregated_2019-03-16.json";
+        String file1Path = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-17\\observations_2019-03-17_only.json";
+        String file2Path = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-17\\predictions_2019-03-17_only.json";
+        String file3Path = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-17\\aggregated_2019-03-17_only.json";
 
         List<Idea> predictions = readIdeasFromRawFile(new File(file2Path));
         List<Idea> observations = readIdeasFromRawFile(new File(file1Path));

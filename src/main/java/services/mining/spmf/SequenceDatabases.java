@@ -5,13 +5,10 @@ import commons.idea.aida.AidaUtils;
 import commons.mining.model.KeyType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import services.matching.IdeaSourceIpComparator;
 
 import java.io.File;
-import java.nio.file.Path;
 import java.util.List;
 
-import static commons.idea.Idea.readIdeasFromFormattedFile;
 import static commons.idea.Idea.readIdeasFromRawFile;
 
 public class SequenceDatabases {
