@@ -1,10 +1,12 @@
 package services.matching;
 
+import analysis.utils.RuleMatch;
 import ca.pfv.spmf.input.sequence_database_array_integers.Sequence;
 import commons.mining.model.Item;
 import commons.mining.model.KeyType;
 import commons.mining.model.Rule;
 
+import services.matching.utils.ConfidenceComparator;
 import services.mining.spmf.IdeaSequenceDatabase;
 import services.mining.spmf.SequenceDatabases;
 
@@ -17,21 +19,39 @@ import java.util.concurrent.TimeUnit;
 public class Matching {
 
     public static void main(String[] args) {
-        ArrayList<Double> Top10Confidence = new ArrayList<>();
 
-        String rulesFile = "data/rules/FullSimulation/TopSeqRules/ruleDB_2019-03-17"; // Percorso del file contenente le regole
+        String rulesFile = "data/rules/ruleDBpaper";
+
+        String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
+
+        ArrayList<String> days = new ArrayList<>();
+        days.add("2019-03-11");
+        days.add("2019-03-12");
+        days.add("2019-03-13");
+        days.add("2019-03-14");
+        days.add("2019-03-15");
+        days.add("2019-03-16");
+        days.add("2019-03-17");
+
+        for (String day :days){
+            String inputFile = dirSim + day + "\\aggregated_" + day + ".json";
+            List <RuleMatch> ruleMatches = run(rulesFile, inputFile);
+            computeTopKRate(ruleMatches, 10, true);
+        }
+
+
+
+    }
+
+    public static List<RuleMatch> run(String rulesFile, String inputFile) {
         List<Rule> rules = readRulesFromFile(rulesFile);
-
-        String inputFile = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-17\\aggregated_2019-03-17.json"; // Percorso del file contenente le idee
-
         IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile(inputFile, KeyType.SRC_IPV4);
         Map<Item, Integer> invertedMap = inverter(sequenceDb.getItemMapping());
 
         List<Sequence> seqs = sequenceDb.getDatabase().getSequences();
 
+        List<RuleMatch> ruleMatches = new ArrayList<>();
         for (Rule r : rules) {
-
-            //r = rules.get(4);
             List<Item> antecedent = new ArrayList<>(r.getAntecedent());
             List<Integer> antecedentInt = itemToInt(antecedent, invertedMap);
 
@@ -40,9 +60,8 @@ public class Matching {
 
             int ant_count = 0;
             int cons_count = 0;
-            int seq_ok = 0;
 
-            boolean matched = false;
+            boolean matched;
 
             for (Sequence s : seqs) {
                 matched = false;
@@ -53,46 +72,52 @@ public class Matching {
 
                 int index = getLastMatch(combinedList, antecedentInt);
                 if (index != -1) {
-                    combinedList = combinedList.subList(index,combinedList.size());
+                    combinedList = combinedList.subList(index, combinedList.size());
                     matched = new HashSet<>(combinedList).containsAll(consequentInt);
                     ant_count++;
                 }
                 if (matched) {
                     cons_count++;
-                    seq_ok++;
-
                 }
 
             }
-            double confidence = (double) cons_count / ant_count;
-            System.out.println(r);
-            System.out.println("Supporto: " + seq_ok);
-            System.out.println("Mining Supporto: " + r.getSupport());
-            System.out.println("Confidenza: " + confidence);
-            System.out.println("Mining Confidenza: " + r.getConfidence());
-            System.out.println("\t----\t");
 
-            Top10Confidence.add(confidence);
+            ruleMatches.add(new RuleMatch(r.getAntecedent() + " ==> " + r.getConsequent(), ant_count, cons_count));
+
         }
 
-        Top10Confidence.sort(Collections.reverseOrder());
+        ruleMatches.sort(new ConfidenceComparator());
 
-        int numElementsToAverage = Math.min(10, Top10Confidence.size());
-        double sumOfFirst10 = 0.0;
-
-        for (int i = 0; i < numElementsToAverage; i++) {
-            sumOfFirst10 += Top10Confidence.get(i);
-        }
-
-        double averageOfFirst10 = sumOfFirst10 / numElementsToAverage;
-
-        System.out.println("Top 10 Confidence Mean: " + averageOfFirst10);
-
+        return ruleMatches;
     }
 
-    public static List<Rule> run(String rulesFile, String inputFile, boolean verbose){
+    public static double computeTopKRate(List<RuleMatch> ruleMatches, int k, boolean verbose){
 
-        return null;
+        ruleMatches.sort(new ConfidenceComparator());
+
+        int numTopRules = Math.min(k, ruleMatches.size());
+        double sumTopRatios = 0.0;
+
+        for (int i = 0; i < numTopRules; i++) {
+            sumTopRatios += ruleMatches.get(i).getSuccessRate();
+        }
+
+        double averageTopRatio = sumTopRatios / numTopRules;
+        int predAlerts = 0;
+        int succPreds = 0;
+
+        for (int i = 0; i < numTopRules; i++){
+            predAlerts += ruleMatches.get(i).getPartialMatches();
+            succPreds += ruleMatches.get(i).getFullMatches();
+        }
+        if(verbose) {
+            System.out.println("Predicted Alerts: " + predAlerts);
+            System.out.println("Successful Predictions: " + succPreds);
+            System.out.println("Success Rate: " + (double)succPreds/predAlerts*100 + "%");
+            System.out.println("Average Success Rate of Top " + numTopRules + " Rules: " + averageTopRatio);
+        }
+
+        return averageTopRatio;
     }
 
     private static int getLastMatch(List<Integer> firstList, List<Integer> secondList) {
@@ -110,7 +135,7 @@ public class Matching {
             if (temp.contains(item)) {
                 try {
                     temp.remove(Integer.valueOf(item));
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 index = i;
@@ -128,7 +153,7 @@ public class Matching {
         for (Item i : list) {
             if (invertedMap.get(i) == null) {
                 i.setNodeName(i.getNodeName().replaceAll(" ", ""));
-                i.setNodeName(i.getCategory().replaceAll(" ", ""));
+                i.setCategory(i.getCategory().replaceAll(" ", ""));
             }
             listInt.add(invertedMap.get(i));
         }
@@ -185,18 +210,18 @@ public class Matching {
             String node = "";
             String alert = "";
             String port = "";
-            if(splitted.length > 3){
+            if (splitted.length > 3) {
                 node = splitted[0];
-                for(int i=1; i<splitted.length-1; i++)
+                for (int i = 1; i < splitted.length - 1; i++)
                     if (Character.isUpperCase(splitted[i].charAt(0)))
                         alert = alert + "_" + splitted[i];
                     else
                         node = node + "_" + splitted[i];
-            }else{
+            } else {
                 node = splitted[0];
                 alert = splitted[1];
             }
-            port = splitted[splitted.length -1];
+            port = splitted[splitted.length - 1];
 
             if (alert.startsWith("_"))
                 alert = alert.replace("_", " ");
