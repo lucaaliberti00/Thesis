@@ -9,11 +9,14 @@ public class RuleMatch {
     private int fullMatches;
     private double successRate;
 
-    public RuleMatch(String rule, int partialMatches, int fullMatches) {
-        this.rule = rule;
+    private Rule completeRule;
+
+    public RuleMatch(String rule, int partialMatches, int fullMatches, Rule completeRule) {
+        this.rule = rule.replaceAll("\\[", "").replaceAll("]", "");
         this.partialMatches = partialMatches;
         this.fullMatches = fullMatches;
         this.successRate = (double)fullMatches/partialMatches;
+        this.completeRule = completeRule;
     }
 
     public String getRule() {
@@ -56,5 +59,17 @@ public class RuleMatch {
                 ", fullMatches=" + fullMatches +
                 ", successRate=" + successRate +
                 '}';
+    }
+
+    public String toCSV(String date){
+        return date + ";" + rule + ";" + partialMatches + ";" + fullMatches + ";" + successRate;
+    }
+
+    public Rule getCompleteRule() {
+        return completeRule;
+    }
+
+    public void setCompleteRule(Rule completeRule) {
+        this.completeRule = completeRule;
     }
 }

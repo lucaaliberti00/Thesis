@@ -30,7 +30,7 @@ public class SimulationReader {
             List<Idea> predList = predMap.get(rule);
             List<Idea> obsList = obsMap.getOrDefault(rule, new ArrayList<>());
 
-            ruleMatches.add(new RuleMatch(rule, predList.size(), obsList.size()));
+            ruleMatches.add(new RuleMatch(rule, predList.size(), obsList.size(), null));
         }
 
         // Ordina la lista in base al rapporto (ratio) in ordine decrescente

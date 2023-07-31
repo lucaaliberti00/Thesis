@@ -6,8 +6,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
+import analysis.utils.RuleMatch;
+import ca.pfv.spmf.algorithms.sequential_rules.topseqrules_and_tns.AlgoTNS;
 import ca.pfv.spmf.algorithms.sequential_rules.topseqrules_and_tns.AlgoTopSeqRules;
 
 import ca.pfv.spmf.datastructures.redblacktree.RedBlackTree;
@@ -22,29 +25,50 @@ import org.slf4j.LoggerFactory;
 import services.mining.spmf.IdeaSequenceDatabase;
 import services.mining.spmf.SequenceDatabases;
 
+import static analysis.SimulationRulesAnalysis.saveToCSV;
+
 public class Mining {
 
     private static final Logger logger = LoggerFactory.getLogger(Mining.class);
-    private double minConf = 0.5;
-    private int k = 10;
+    private static double minConf = 0.5;
+    private static int k = 10;
+
+    private static int delta = 2;
 
     public static void main(String[] args) {
-        Mining mining = new Mining();
-        String database = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\2019-03-15\\aggregated_2019-03-15.json";
-        String ruleDB = "data\\rules\\ruleDB_2019-03-15";
-        mining.run(database, ruleDB);
+        String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
+        String dirRules = "data/rules/FullSimulation/TNS/";
+
+        ArrayList<String> days = new ArrayList<>();
+        days.add("2019-03-11");
+        days.add("2019-03-12");
+        days.add("2019-03-13");
+        days.add("2019-03-14");
+        days.add("2019-03-15");
+        days.add("2019-03-16");
+        days.add("2019-03-17");
+
+        for (String day :days){
+            String inputFile = dirSim + day + "\\aggregated_" + day + ".json";
+            String ruleDB = dirRules + "ruleDB_" + day;
+
+            run(inputFile, ruleDB);
+        }
+
+
     }
 
 
-    public void run(String dataset, String ruleDB) {
+    public static void run(String dataset, String ruleDB) {
 
         // Create sequential database
         IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile(dataset, KeyType.SRC_IPV4);
 
         // Run algorithm
         logger.info("Running TopSeqRules algorithm");
-        AlgoTopSeqRules algo = new AlgoTopSeqRules();
-        RedBlackTree<ca.pfv.spmf.algorithms.sequential_rules.topseqrules_and_tns.Rule> spmfRules = algo.runAlgorithm(k, sequenceDb.getDatabase(), minConf);
+        //AlgoTopSeqRules algo = new AlgoTopSeqRules();
+        AlgoTNS algo = new AlgoTNS();
+        RedBlackTree<ca.pfv.spmf.algorithms.sequential_rules.topseqrules_and_tns.Rule> spmfRules = algo.runAlgorithm(k, sequenceDb.getDatabase(), minConf, delta);
         ;
         logger.info("TopSeqRules algorithm discovered {} rules", spmfRules.size());
         logger.info("Metrics: max memory usage {} MB", MemoryLogger.getInstance().getMaxMemory());
@@ -68,6 +92,10 @@ public class Mining {
             rules.add(rule);
         }
 
+        writeRuleToFile(new ArrayList<>(rules), ruleDB);
+    }
+
+    public static void writeRuleToFile(List<Rule> rules, String ruleDB){
         try (FileWriter writer = new FileWriter(ruleDB)) {
             for (Rule rule : rules) {
                 String ruleString = Rules.toSpmf(rule);

@@ -1,6 +1,7 @@
 package commons.mining.model;
 
 import java.util.Collections;
+import java.util.Objects;
 import java.util.Set;
 
 public class Rule {
@@ -47,5 +48,18 @@ public class Rule {
                 "antecedent=" + antecedent +
                 ", consequent=" + consequent +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rule rule = (Rule) o;
+        return Objects.equals(antecedent, rule.antecedent) && Objects.equals(consequent, rule.consequent);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(antecedent, consequent);
     }
 }
