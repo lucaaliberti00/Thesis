@@ -4,7 +4,7 @@ import analysis.utils.RuleMatch;
 
 import java.util.Comparator;
 
-public class ConfidenceComparator implements Comparator<RuleMatch> {
+public class SuccessRateComparator implements Comparator<RuleMatch> {
     @Override
     public int compare(RuleMatch r1, RuleMatch r2) {
         // Tratta i valori NaN come maggiori di tutti gli altri valori

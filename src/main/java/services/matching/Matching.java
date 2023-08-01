@@ -6,7 +6,7 @@ import commons.mining.model.Item;
 import commons.mining.model.KeyType;
 import commons.mining.model.Rule;
 
-import services.matching.utils.ConfidenceComparator;
+import services.matching.utils.SuccessRateComparator;
 import services.mining.spmf.IdeaSequenceDatabase;
 import services.mining.spmf.SequenceDatabases;
 
@@ -16,21 +16,18 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-import static services.mining.Mining.writeRuleToFile;
 
 public class Matching {
-
-    private static final HashMap<Rule, ArrayList<Double>> topKsuccRate = new HashMap<>();
-    private static final HashMap<Rule, ArrayList<Double>> topKsupport = new HashMap<>();
-    private static final HashMap<Rule, ArrayList<Double>> topKconfidence = new HashMap<>();
-    private static final HashMap<Rule, Set<String>> timesInTop = new HashMap<>();
 
     public static void main(String[] args) {
 
         String rulesFile = "data/rules/FullSimulation/TopSeqRules/ruleDB_";
-        //String csvPath = "data/csv/TopSeqRulesTotalSimulationLocal.csv";
         String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
-        HashSet<Rule> uniqueRules = new HashSet<>();
+
+        HashMap<String, HashMap<String, Double>> statsDays = new HashMap<>();
+        HashMap<Rule, List<Double>> supportXrule = new HashMap<>();
+        HashMap<Rule, List<Double>> confidenceXrule = new HashMap<>();
+        HashMap<String, HashMap<Rule, Double>> statsSuccRate = new HashMap<>();
 
         ArrayList<String> days = new ArrayList<>();
         days.add("2019-03-12");
@@ -41,58 +38,42 @@ public class Matching {
         days.add("2019-03-17");
 
         List<Rule> rules = readRulesFromFile(rulesFile + "2019-03-11");
-        String inputFile = dirSim + "2019-03-11" + "\\aggregated_" + "2019-03-11" + ".json";
 
+        String inputFile = dirSim + "2019-03-11" + "\\aggregated_" + "2019-03-11" + ".json";
         List<RuleMatch> ruleMatches = run(rules, inputFile);
         System.out.println("\t\tDAY " + "2019-03-11" + "\t");
-        computeTopKRate(ruleMatches, 10, true, "2019-03-11");
+        computeStatsDays(statsDays, ruleMatches,"2019-03-11",true);
+        computeSupportRules(supportXrule, rules);
+        computeConfidenceRules(confidenceXrule, rules);
+        computeStatsSuccRate(statsSuccRate, ruleMatches, "2019-03-11");
 
-        rules = readRulesFromFile(rulesFile + "2019-03-11");
-        uniqueRules.addAll(rules);
+        HashSet<Rule> uniqueRules = new HashSet<>(rules);
         System.out.println("Rules in List at 2019-03-11: " + uniqueRules.size());
 
-
         for (String day : days) {
-            //List<String> performance = new ArrayList<>();
             inputFile = dirSim + day + "\\aggregated_" + day + ".json";
             ruleMatches = run(new ArrayList<>(uniqueRules), inputFile);
-            /*for(RuleMatch r : ruleMatches){
-                performance.add(r.toCSV(day));
-            }*/
-            //saveToCSV(performance, csvPath);
             System.out.println("\t\tDAY " + day + "\t");
-            computeTopKRate(ruleMatches, 10, true, day);
 
-            for(Rule r : readRulesFromFile(rulesFile + day)){
-                if(!uniqueRules.contains(r)){
-                    uniqueRules.add(r);
-                }
-            }
+            computeStatsDays(statsDays, ruleMatches,day,true);
+            computeStatsSuccRate(statsSuccRate, ruleMatches, "2019-03-11");
+
+            rules = readRulesFromFile(rulesFile + day);
+
+            computeSupportRules(supportXrule, rules);
+            computeConfidenceRules(confidenceXrule, rules);
+
+            uniqueRules.addAll(rules);
             System.out.println("Rules in List at " + day + ": " + uniqueRules.size());
 
-
         }
 
-        double meanTop = 0;
+        System.out.println(statsDays);
+        System.out.println(supportXrule);
+        System.out.println(confidenceXrule);
+        System.out.println(statsSuccRate);
 
-        System.out.println("\n\nTop K rules and Mean Confidence");
 
-        for (Rule r : topKsuccRate.keySet()) {
-            double result = calcolaMedia(topKsuccRate.get(r));
-            System.out.println(r + " --> " + result);
-            meanTop += result;
-        }
-        System.out.println("Media Totale Success Rate: " + meanTop / topKsuccRate.size());
-
-        System.out.println("Times in TopK per Rule");
-
-        for (Rule r : timesInTop.keySet()) {
-            System.out.print(r);
-            System.out.print(" --> ");
-            System.out.println(timesInTop.get(r).size());
-        }
-
-        writeRuleToFile(new ArrayList<>(uniqueRules), "data/rules/FullSimulation/TopSeqRules/topRulesSim");
 
     }
 
@@ -140,61 +121,61 @@ public class Matching {
 
         }
 
-        ruleMatches.sort(new ConfidenceComparator());
+        ruleMatches.sort(new SuccessRateComparator());
 
         return ruleMatches;
     }
 
 
-    public static double computeTopKRate(List<RuleMatch> ruleMatches, int k, boolean verbose, String day) {
-
-        ruleMatches.sort(new ConfidenceComparator());
-
-        int numTopRules = Math.min(k, ruleMatches.size());
-        double sumTopRatios = 0.0;
-
-        for (int i = 0; i < numTopRules; i++) {
-            sumTopRatios += ruleMatches.get(i).getSuccessRate();
-
-        }
-
-        double averageTopRatio = sumTopRatios / numTopRules;
+    public static void computeStatsDays(HashMap<String, HashMap<String, Double>> statsDays, List<RuleMatch> ruleMatches, String day, boolean verbose) {
         int predAlerts = 0;
         int succPreds = 0;
 
-        for (int i = 0; i < numTopRules; i++) {
+        //Se vuoi considerare la Top10
+        //ruleMatches.sort(new SuccessRateComparator());
+        //int numTopRules = Math.min(10, ruleMatches.size());
+
+
+        for (int i = 0 ; i< ruleMatches.size(); i++) {
             predAlerts += ruleMatches.get(i).getPartialMatches();
             succPreds += ruleMatches.get(i).getFullMatches();
-
-            //riempi la lista di topK con confidenza media
-            if (!topKsuccRate.containsKey(ruleMatches.get(i).getCompleteRule())) {
-                topKsuccRate.put(ruleMatches.get(i).getCompleteRule(), new ArrayList<>());
-                topKsuccRate.get(ruleMatches.get(i).getCompleteRule()).add(ruleMatches.get(i).getSuccessRate());
-            } else {
-                topKsuccRate.get(ruleMatches.get(i).getCompleteRule()).add(ruleMatches.get(i).getSuccessRate());
-            }
-
-            Set<String> days;
-            if (!timesInTop.containsKey(ruleMatches.get(i).getCompleteRule())) {
-                days = new HashSet<>();
-            } else {
-                days = timesInTop.get(ruleMatches.get(i).getCompleteRule());
-            }
-            days.add(day);
-            timesInTop.put(ruleMatches.get(i).getCompleteRule(), days);
-
-
         }
+        if (!statsDays.containsKey(day)) {
+            statsDays.put(day, new HashMap<>());
+        }
+        statsDays.get(day).put("Predicted Alerts", (double) predAlerts);
+        statsDays.get(day).put("Successfull Predictions", (double) succPreds);
+        statsDays.get(day).put("Success Rate", (double) (double) succPreds / predAlerts * 100);
         if (verbose) {
             System.out.println("Predicted Alerts: " + predAlerts);
             System.out.println("Successful Predictions: " + succPreds);
             System.out.println("Success Rate: " + (double) succPreds / predAlerts * 100 + "%");
-            System.out.println("Average Success Rate of Top " + numTopRules + " Rules: " + averageTopRatio);
-
         }
 
+    }
+    public static void computeSupportRules(HashMap<Rule, List<Double>> supportXrule, List<Rule> rules){
+        for(Rule r : rules) {
+            if (!supportXrule.containsKey(r))
+                supportXrule.put(r, new ArrayList<>());
+            supportXrule.get(r).add((double) r.getSupport());
+        }
+    }
+    public static void computeConfidenceRules(HashMap<Rule, List<Double>> confidenceXrule, List<Rule> rules){
+        for(Rule r : rules) {
+            if (!confidenceXrule.containsKey(r))
+                confidenceXrule.put(r, new ArrayList<>());
+            confidenceXrule.get(r).add(r.getConfidence());
+        }
+    }
+    public static void computeStatsSuccRate(HashMap<String, HashMap<Rule, Double>> statsSuccRate, List<RuleMatch> ruleMatches, String day){
+        if(!statsSuccRate.containsKey(day))
+            statsSuccRate.put(day, new HashMap<>());
 
-        return averageTopRatio;
+        for(RuleMatch rm : ruleMatches){
+            if(statsSuccRate.get(day).containsKey(rm.getCompleteRule()))
+                System.err.println(" ATTENZIONE ERRORE ");
+            statsSuccRate.get(day).put(rm.getCompleteRule(), rm.getSuccessRate());
+        }
     }
 
     private static int getLastMatch(List<Integer> firstList, List<Integer> secondList) {

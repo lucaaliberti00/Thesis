@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static analysis.SimulationReader.run;
-import static services.matching.Matching.computeTopKRate;
 
 public class SimulationRulesAnalysis {
 
@@ -41,7 +40,6 @@ public class SimulationRulesAnalysis {
             }
             saveToCSV(performance, csvPath);
             System.out.println("Alerts: " + countLines(fileAggr));
-            computeTopKRate(ruleMatches, 10, true, day);
             System.out.println();
 
 

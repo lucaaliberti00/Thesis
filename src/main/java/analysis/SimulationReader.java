@@ -2,18 +2,14 @@ package analysis;
 
 import analysis.utils.RuleMatch;
 import commons.idea.Idea;
-import services.matching.utils.ConfidenceComparator;
+import services.matching.utils.SuccessRateComparator;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import static commons.idea.Idea.readIdeasFromRawFile;
-import static services.matching.Matching.computeTopKRate;
 
 public class SimulationReader {
 
@@ -34,7 +30,7 @@ public class SimulationReader {
         }
 
         // Ordina la lista in base al rapporto (ratio) in ordine decrescente
-        ruleMatches.sort(new ConfidenceComparator());
+        ruleMatches.sort(new SuccessRateComparator());
 
         return ruleMatches;
 
