@@ -1,8 +1,10 @@
 package commons.mining.model;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.logging.Handler;
 
 public class Rule {
 
@@ -55,11 +57,41 @@ public class Rule {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rule rule = (Rule) o;
-        return Objects.equals(antecedent, rule.antecedent) && Objects.equals(consequent, rule.consequent);
+        Set<String> rA= new HashSet<>();
+        for (Item i : ((Rule) o).getAntecedent()){
+            rA.add(i.toString().replaceAll(" ", ""));
+        }
+        Set<String> rC= new HashSet<>();
+        for (Item i : ((Rule) o).getConsequent()){
+            rC.add(i.toString().replaceAll(" ", ""));
+        }
+
+        Set<String> thisA= new HashSet<>();
+        Set<String> thisC= new HashSet<>();
+
+        for (Item i : (antecedent)){
+            thisA.add(i.toString().replaceAll(" ", ""));
+        }
+        for (Item i : consequent){
+            thisC.add(i.toString().replaceAll(" ", ""));
+        }
+
+        return rA.equals(thisA) && rC.equals(thisC);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(antecedent, consequent);
+
+        Set<String> thisA= new HashSet<>();
+        Set<String> thisC= new HashSet<>();
+
+        for (Item i : (antecedent)){
+            thisA.add(i.toString().replaceAll(" ", ""));
+        }
+        for (Item i : consequent){
+            thisC.add(i.toString().replaceAll(" ", ""));
+        }
+
+        return Objects.hash(thisA, thisC);
     }
 }

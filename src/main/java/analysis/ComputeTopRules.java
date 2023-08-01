@@ -18,11 +18,10 @@ public class ComputeTopRules {
 
     public static void main(String[] args) throws IOException {
 
-        List<Rule> uniqueRules = new ArrayList<>();
+        HashSet<Rule> uniqueRules = new HashSet<>();
 
         String rulesFiles = "data/rules/FullSimulation/TopSeqRules/ruleDB_";
 
-        String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
 
         ArrayList<String> days = new ArrayList<>();
         days.add("2019-03-12");
@@ -37,27 +36,15 @@ public class ComputeTopRules {
 
 
         for (String day : days) {
-
             rules = readRulesFromFile(rulesFiles + day);
-            boolean contained = false;
-            List<Rule> toAdd = new ArrayList<>();
-
-            for (Rule r : rules) {
-                for(Rule ur : uniqueRules){
-                    if(ur.getAntecedent().equals(r.getAntecedent()) && ur.getConsequent().equals(r.getConsequent())) {
-                        contained = true;
-                    }
-                }
-                if(!contained)
-                    toAdd.add(r);
-            }
-            uniqueRules.addAll(toAdd);
+            uniqueRules.addAll(rules);
+            System.out.println(uniqueRules.size());
         }
 
         for (Rule r : uniqueRules)
             System.out.println(r);
 
-        writeRuleToFile(uniqueRules, "data/rules/FullSimulation/TopSeqRules/topRules");
+        writeRuleToFile(new ArrayList<>(uniqueRules), "data/rules/FullSimulation/TopSeqRules/topRules");
 
 
     }

@@ -41,7 +41,7 @@ public class SimulationRulesAnalysis {
             }
             saveToCSV(performance, csvPath);
             System.out.println("Alerts: " + countLines(fileAggr));
-            computeTopKRate(ruleMatches, 10, true);
+            computeTopKRate(ruleMatches, 10, true, day);
             System.out.println();
 
 

@@ -6,7 +6,6 @@ import commons.mining.model.Item;
 import commons.mining.model.KeyType;
 import commons.mining.model.Rule;
 
-import org.apache.hadoop.util.hash.Hash;
 import services.matching.utils.ConfidenceComparator;
 import services.mining.spmf.IdeaSequenceDatabase;
 import services.mining.spmf.SequenceDatabases;
@@ -17,22 +16,23 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-import static analysis.SimulationRulesAnalysis.saveToCSV;
 import static services.mining.Mining.writeRuleToFile;
 
 public class Matching {
 
-    private static HashMap<String, ArrayList<Double>> topK = new HashMap<>();
-    private static HashMap<Rule, Integer> timesInTop = new HashMap<>();
+    private static final HashMap<Rule, ArrayList<Double>> topKsuccRate = new HashMap<>();
+    private static final HashMap<Rule, ArrayList<Double>> topKsupport = new HashMap<>();
+    private static final HashMap<Rule, ArrayList<Double>> topKconfidence = new HashMap<>();
+    private static final HashMap<Rule, Set<String>> timesInTop = new HashMap<>();
 
     public static void main(String[] args) {
 
         String rulesFile = "data/rules/FullSimulation/TopSeqRules/ruleDB_";
         //String csvPath = "data/csv/TopSeqRulesTotalSimulationLocal.csv";
         String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
+        HashSet<Rule> uniqueRules = new HashSet<>();
 
         ArrayList<String> days = new ArrayList<>();
-        //days.add("2019-03-11");
         days.add("2019-03-12");
         days.add("2019-03-13");
         days.add("2019-03-14");
@@ -42,45 +42,59 @@ public class Matching {
 
         List<Rule> rules = readRulesFromFile(rulesFile + "2019-03-11");
         String inputFile = dirSim + "2019-03-11" + "\\aggregated_" + "2019-03-11" + ".json";
-        List <RuleMatch> ruleMatches = run(rules, inputFile);
-        System.out.println("\t\tDAY " + "2019-03-11" + "\t");
-        computeTopKRate(ruleMatches, 10, true);
 
-        for (String day :days){
+        List<RuleMatch> ruleMatches = run(rules, inputFile);
+        System.out.println("\t\tDAY " + "2019-03-11" + "\t");
+        computeTopKRate(ruleMatches, 10, true, "2019-03-11");
+
+        rules = readRulesFromFile(rulesFile + "2019-03-11");
+        uniqueRules.addAll(rules);
+        System.out.println("Rules in List at 2019-03-11: " + uniqueRules.size());
+
+
+        for (String day : days) {
             //List<String> performance = new ArrayList<>();
             inputFile = dirSim + day + "\\aggregated_" + day + ".json";
-            ruleMatches = run(rules, inputFile);
+            ruleMatches = run(new ArrayList<>(uniqueRules), inputFile);
             /*for(RuleMatch r : ruleMatches){
                 performance.add(r.toCSV(day));
             }*/
             //saveToCSV(performance, csvPath);
             System.out.println("\t\tDAY " + day + "\t");
-            computeTopKRate(ruleMatches, 10, true);
+            computeTopKRate(ruleMatches, 10, true, day);
 
-            rules.addAll(readRulesFromFile(rulesFile + day));
+            for(Rule r : readRulesFromFile(rulesFile + day)){
+                if(!uniqueRules.contains(r)){
+                    uniqueRules.add(r);
+                }
+            }
+            System.out.println("Rules in List at " + day + ": " + uniqueRules.size());
+
+
         }
 
         double meanTop = 0;
 
-        System.out.println("Top K rules and Mean Confidence");
+        System.out.println("\n\nTop K rules and Mean Confidence");
 
-        for (String r : topK.keySet()){
-            double result = calcolaMedia(topK.get(r));
+        for (Rule r : topKsuccRate.keySet()) {
+            double result = calcolaMedia(topKsuccRate.get(r));
             System.out.println(r + " --> " + result);
             meanTop += result;
         }
-        System.out.println("Media Totale Success Rate: " + meanTop /topK.size());
+        System.out.println("Media Totale Success Rate: " + meanTop / topKsuccRate.size());
 
         System.out.println("Times in TopK per Rule");
 
-        for (Rule r : timesInTop.keySet()){
+        for (Rule r : timesInTop.keySet()) {
             System.out.print(r);
             System.out.print(" --> ");
-            System.out.println(timesInTop.get(r));
+            System.out.println(timesInTop.get(r).size());
         }
 
-    }
+        writeRuleToFile(new ArrayList<>(uniqueRules), "data/rules/FullSimulation/TopSeqRules/topRulesSim");
 
+    }
 
 
     public static List<RuleMatch> run(List<Rule> rules, String inputFile) {
@@ -132,7 +146,7 @@ public class Matching {
     }
 
 
-    public static double computeTopKRate(List<RuleMatch> ruleMatches, int k, boolean verbose){
+    public static double computeTopKRate(List<RuleMatch> ruleMatches, int k, boolean verbose, String day) {
 
         ruleMatches.sort(new ConfidenceComparator());
 
@@ -148,32 +162,33 @@ public class Matching {
         int predAlerts = 0;
         int succPreds = 0;
 
-        for (int i = 0; i < numTopRules; i++){
+        for (int i = 0; i < numTopRules; i++) {
             predAlerts += ruleMatches.get(i).getPartialMatches();
             succPreds += ruleMatches.get(i).getFullMatches();
 
             //riempi la lista di topK con confidenza media
-            if (!topK.containsKey(ruleMatches.get(i).getRule())){
-                topK.put(ruleMatches.get(i).getRule(), new ArrayList<>());
-                topK.get(ruleMatches.get(i).getRule()).add(ruleMatches.get(i).getSuccessRate());
-            }else{
-                topK.get(ruleMatches.get(i).getRule()).add(ruleMatches.get(i).getSuccessRate());
+            if (!topKsuccRate.containsKey(ruleMatches.get(i).getCompleteRule())) {
+                topKsuccRate.put(ruleMatches.get(i).getCompleteRule(), new ArrayList<>());
+                topKsuccRate.get(ruleMatches.get(i).getCompleteRule()).add(ruleMatches.get(i).getSuccessRate());
+            } else {
+                topKsuccRate.get(ruleMatches.get(i).getCompleteRule()).add(ruleMatches.get(i).getSuccessRate());
             }
 
-            if (!timesInTop.containsKey(ruleMatches.get(i).getCompleteRule())){
-                timesInTop.put(ruleMatches.get(i).getCompleteRule(), 1);
-
-            }else{
-                Integer tops = timesInTop.get(ruleMatches.get(i).getCompleteRule());
-                timesInTop.put(ruleMatches.get(i).getCompleteRule(), tops+1);
+            Set<String> days;
+            if (!timesInTop.containsKey(ruleMatches.get(i).getCompleteRule())) {
+                days = new HashSet<>();
+            } else {
+                days = timesInTop.get(ruleMatches.get(i).getCompleteRule());
             }
+            days.add(day);
+            timesInTop.put(ruleMatches.get(i).getCompleteRule(), days);
 
 
         }
-        if(verbose) {
+        if (verbose) {
             System.out.println("Predicted Alerts: " + predAlerts);
             System.out.println("Successful Predictions: " + succPreds);
-            System.out.println("Success Rate: " + (double)succPreds/predAlerts*100 + "%");
+            System.out.println("Success Rate: " + (double) succPreds / predAlerts * 100 + "%");
             System.out.println("Average Success Rate of Top " + numTopRules + " Rules: " + averageTopRatio);
 
         }
@@ -251,8 +266,8 @@ public class Matching {
     private static Rule parseRule(String line) {
         String[] parts = line.split(" ==> ");
         if (parts.length == 2) {
-            String antecedentStr = parts[0];
-            String consequentStr = parts[1].split(" ")[0];
+            String antecedentStr = parts[0].replaceAll(" ", "");
+            String consequentStr = parts[1].split(" ")[0].replaceAll(" ", "");
             int support = new Integer(parts[1].split(" ")[1]);
             double confidence = new Double(parts[1].split(" ")[3].replace(',', '.'));
 
