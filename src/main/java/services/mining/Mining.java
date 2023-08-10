@@ -3,18 +3,17 @@ package services.mining;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import analysis.utils.RuleMatch;
 import ca.pfv.spmf.algorithms.sequential_rules.topseqrules_and_tns.AlgoTNS;
+import ca.pfv.spmf.algorithms.sequential_rules.topseqrules_and_tns.AlgoTopSeqClassRules;
 import ca.pfv.spmf.algorithms.sequential_rules.topseqrules_and_tns.AlgoTopSeqRules;
 
 import ca.pfv.spmf.datastructures.redblacktree.RedBlackTree;
 import ca.pfv.spmf.tools.MemoryLogger;
+import commons.mining.model.Item;
 import commons.mining.model.KeyType;
 import commons.mining.model.Rule;
 import commons.mining.model.Rules;
@@ -37,7 +36,7 @@ public class Mining {
 
     public static void main(String[] args) {
         String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
-        String dirRules = "data/rules/FullSimulation/TNS/";
+        String dirRules = "data/rules/FullSimulation/TopSeqRulesClass/";
 
         ArrayList<String> days = new ArrayList<>();
         days.add("2019-03-11");
@@ -64,11 +63,28 @@ public class Mining {
         // Create sequential database
         IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile(dataset, KeyType.SRC_IPV4);
 
+        /*List<Integer> consequents = new ArrayList<>();
+        for (Map.Entry<Integer, Item> e : sequenceDb.getItemMapping().entrySet()){
+            if (!e.getValue().getCategory().equals("Recon.Scanning"))
+                consequents.add(e.getKey());
+        }
+
+        int[] intArray = new int[consequents.size()];
+        for (int i = 0; i < consequents.size(); i++) {
+            intArray[i] = consequents.get(i);
+        }*/
+
         // Run algorithm
         logger.info("Running TopSeqRules algorithm");
-        //AlgoTopSeqRules algo = new AlgoTopSeqRules();
-        AlgoTNS algo = new AlgoTNS();
-        RedBlackTree<ca.pfv.spmf.algorithms.sequential_rules.topseqrules_and_tns.Rule> spmfRules = algo.runAlgorithm(k, sequenceDb.getDatabase(), minConf, delta);
+
+        //AlgoTopSeqClassRules algo = new AlgoTopSeqClassRules();
+        //RedBlackTree<ca.pfv.spmf.algorithms.sequential_rules.topseqrules_and_tns.ClassRule> spmfRules = algo.runAlgorithm(k, sequenceDb.getDatabase(), minConf, intArray);
+
+        AlgoTopSeqRules algo = new AlgoTopSeqRules();
+        RedBlackTree<ca.pfv.spmf.algorithms.sequential_rules.topseqrules_and_tns.Rule> spmfRules = algo.runAlgorithm(k, sequenceDb.getDatabase(), minConf);
+
+        //AlgoTNS algo = new AlgoTNS();
+        //RedBlackTree<ca.pfv.spmf.algorithms.sequential_rules.topseqrules_and_tns.Rule> spmfRules = algo.runAlgorithm(k, sequenceDb.getDatabase(), minConf, delta);
         ;
         logger.info("TopSeqRules algorithm discovered {} rules", spmfRules.size());
         logger.info("Metrics: max memory usage {} MB", MemoryLogger.getInstance().getMaxMemory());
@@ -83,6 +99,8 @@ public class Mining {
         Collection<Rule> rules = new ArrayList<>();
 
         for (ca.pfv.spmf.algorithms.sequential_rules.topseqrules_and_tns.Rule spmfRule : spmfRules) {
+            //int[] item2 = {spmfRule.getItemset2()};
+
             Rule rule = new Rule(
                     Arrays.stream(spmfRule.getItemset1()).mapToObj(sequenceDb.getItemMapping()::get).collect(Collectors.toSet()),
                     Arrays.stream(spmfRule.getItemset2()).mapToObj(sequenceDb.getItemMapping()::get).collect(Collectors.toSet()),

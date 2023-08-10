@@ -6,7 +6,6 @@ import commons.mining.model.Item;
 import commons.mining.model.KeyType;
 import commons.mining.model.Rule;
 
-import services.matching.utils.SuccessRateComparator;
 import services.mining.spmf.IdeaSequenceDatabase;
 import services.mining.spmf.SequenceDatabases;
 
@@ -14,14 +13,15 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
+
+import static services.matching.utils.StatisticsUtils.*;
 
 
 public class Matching {
 
     public static void main(String[] args) {
 
-        String rulesFile = "data/rules/FullSimulation/TopSeqRules/ruleDB_";
+        String rulesFile = "data/rules/FullSimulation/TopSeqRulesClass/ruleDB_";
         String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
 
         HashMap<String, HashMap<String, Double>> statsDays = new HashMap<>();
@@ -38,12 +38,14 @@ public class Matching {
         days.add("2019-03-17");
 
         List<Rule> rules = readRulesFromFile(rulesFile + "2019-03-11");
-
         String inputFile = dirSim + "2019-03-11" + "\\aggregated_" + "2019-03-11" + ".json";
+
+
         List<RuleMatch> ruleMatches = run(rules, inputFile);
+
         System.out.println("\t\tDAY " + "2019-03-11" + "\t");
-        computeStatsDays(statsDays, ruleMatches,"2019-03-11",true);
-        computeSupportRules(supportXrule, rules);
+        computeStatsDays(statsDays, ruleMatches, "2019-03-11", countLines(inputFile), true);
+        computeSupportRules(supportXrule, rules, countLines(inputFile));
         computeConfidenceRules(confidenceXrule, rules);
         computeStatsSuccRate(statsSuccRate, ruleMatches, "2019-03-11");
 
@@ -55,12 +57,12 @@ public class Matching {
             ruleMatches = run(new ArrayList<>(uniqueRules), inputFile);
             System.out.println("\t\tDAY " + day + "\t");
 
-            computeStatsDays(statsDays, ruleMatches,day,true);
-            computeStatsSuccRate(statsSuccRate, ruleMatches, "2019-03-11");
+            computeStatsDays(statsDays, ruleMatches, day, countLines(inputFile), true);
+            computeStatsSuccRate(statsSuccRate, ruleMatches, day);
 
             rules = readRulesFromFile(rulesFile + day);
 
-            computeSupportRules(supportXrule, rules);
+            computeSupportRules(supportXrule, rules, countLines(inputFile));
             computeConfidenceRules(confidenceXrule, rules);
 
             uniqueRules.addAll(rules);
@@ -68,15 +70,17 @@ public class Matching {
 
         }
 
-        System.out.println(statsDays);
-        System.out.println(supportXrule);
-        System.out.println(confidenceXrule);
-        System.out.println(statsSuccRate);
+        printStatsDays(statsDays);
+        printSupportRules(supportXrule);
+        printConfidenceRules(confidenceXrule);
+        printSuccRateRules(computeSucRateXRule(statsSuccRate));
+
+        saveStatsToFile();
+        saveMeansAndDev();
 
 
 
     }
-
 
     public static List<RuleMatch> run(List<Rule> rules, String inputFile) {
         //List<Rule> rules = readRulesFromFile(rulesFile);
@@ -121,61 +125,7 @@ public class Matching {
 
         }
 
-        ruleMatches.sort(new SuccessRateComparator());
-
         return ruleMatches;
-    }
-
-
-    public static void computeStatsDays(HashMap<String, HashMap<String, Double>> statsDays, List<RuleMatch> ruleMatches, String day, boolean verbose) {
-        int predAlerts = 0;
-        int succPreds = 0;
-
-        //Se vuoi considerare la Top10
-        //ruleMatches.sort(new SuccessRateComparator());
-        //int numTopRules = Math.min(10, ruleMatches.size());
-
-
-        for (int i = 0 ; i< ruleMatches.size(); i++) {
-            predAlerts += ruleMatches.get(i).getPartialMatches();
-            succPreds += ruleMatches.get(i).getFullMatches();
-        }
-        if (!statsDays.containsKey(day)) {
-            statsDays.put(day, new HashMap<>());
-        }
-        statsDays.get(day).put("Predicted Alerts", (double) predAlerts);
-        statsDays.get(day).put("Successfull Predictions", (double) succPreds);
-        statsDays.get(day).put("Success Rate", (double) (double) succPreds / predAlerts * 100);
-        if (verbose) {
-            System.out.println("Predicted Alerts: " + predAlerts);
-            System.out.println("Successful Predictions: " + succPreds);
-            System.out.println("Success Rate: " + (double) succPreds / predAlerts * 100 + "%");
-        }
-
-    }
-    public static void computeSupportRules(HashMap<Rule, List<Double>> supportXrule, List<Rule> rules){
-        for(Rule r : rules) {
-            if (!supportXrule.containsKey(r))
-                supportXrule.put(r, new ArrayList<>());
-            supportXrule.get(r).add((double) r.getSupport());
-        }
-    }
-    public static void computeConfidenceRules(HashMap<Rule, List<Double>> confidenceXrule, List<Rule> rules){
-        for(Rule r : rules) {
-            if (!confidenceXrule.containsKey(r))
-                confidenceXrule.put(r, new ArrayList<>());
-            confidenceXrule.get(r).add(r.getConfidence());
-        }
-    }
-    public static void computeStatsSuccRate(HashMap<String, HashMap<Rule, Double>> statsSuccRate, List<RuleMatch> ruleMatches, String day){
-        if(!statsSuccRate.containsKey(day))
-            statsSuccRate.put(day, new HashMap<>());
-
-        for(RuleMatch rm : ruleMatches){
-            if(statsSuccRate.get(day).containsKey(rm.getCompleteRule()))
-                System.err.println(" ATTENZIONE ERRORE ");
-            statsSuccRate.get(day).put(rm.getCompleteRule(), rm.getSuccessRate());
-        }
     }
 
     private static int getLastMatch(List<Integer> firstList, List<Integer> secondList) {
@@ -289,27 +239,8 @@ public class Matching {
             else
                 items.add(new Item(node, alert, null));
 
-
         }
         return items;
     }
 
-
-    private static long dateDiff(Date date1, Date date2, TimeUnit timeUnit) {
-        long diffInMillies = date2.getTime() - date1.getTime();
-        return timeUnit.convert(diffInMillies, TimeUnit.MILLISECONDS);
-    }
-
-    public static double calcolaMedia(List<Double> listaValori) {
-        if (listaValori == null || listaValori.isEmpty()) {
-            throw new IllegalArgumentException("La lista non può essere vuota o nulla.");
-        }
-
-        double somma = 0.0;
-        for (Double valore : listaValori) {
-            somma += valore;
-        }
-
-        return somma / listaValori.size();
-    }
 }
