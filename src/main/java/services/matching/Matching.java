@@ -21,8 +21,9 @@ public class Matching {
 
     public static void main(String[] args) {
 
-        String rulesFile = "data/rules/FullSimulation/TSRNoPortNoScan/ruleDB_";
+        String rulesFile = "data/rules/FullSimulation/TNSNoPort/ruleDB_";
         String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
+        String dirCSV = "data/csv/FullSimulation/TNSNoPort/";
 
         HashMap<String, HashMap<String, Double>> statsDays = new HashMap<>();
         HashMap<Rule, List<Double>> supportXrule = new HashMap<>();
@@ -70,33 +71,11 @@ public class Matching {
             System.out.println("Rules in List at " + day + ": " + uniqueRules.size());
 
         }
-        /*
-        for (int i = 1 ; i<days.size(); i++) {
-            inputFile = dirSim + days.get(i) + "\\aggregated_" + days.get(i) + ".json";
-            ruleMatches = run(rules, inputFile);
-            System.out.println("\t\tDAY " + days.get(i) + "\t");
 
-            computeStatsDays(statsDays, ruleMatches, days.get(i), countLines(inputFile), true);
-            computeStatsSuccRate(statsSuccRate, ruleMatches, days.get(i));
-
-            rules = readRulesFromFile(rulesFile + days.get(i));
-
-            computeSupportRules(supportXrule, rules, countLines(inputFile));
-            computeConfidenceRules(confidenceXrule, rules);
-
-            uniqueRules.addAll(rules);
-            System.out.println("Rules in List at " + days.get(i) + ": " + rules.size());
-
-        }*/
-
-        printStatsDays(statsDays);
-        printSupportRules(supportXrule);
-        printConfidenceRules(confidenceXrule);
-        printSuccRateRules(computeSucRateXRule(statsSuccRate));
-
-        saveStatsToFile();
-        saveMeansAndDev();
-
+        printStatsDays(statsDays, true, dirCSV + "StatsDays.csv" );
+        printSupportRules(supportXrule, true, dirCSV + "StatsSupport.csv" );
+        printConfidenceRules(confidenceXrule, true, dirCSV + "StatsConfidence.csv" );
+        printSuccRateRules(computeSucRateXRule(statsSuccRate), true, dirCSV + "StatsSuccessRate.csv" );
 
 
     }

@@ -3,9 +3,7 @@ package services.matching.utils;
 import analysis.utils.RuleMatch;
 import commons.mining.model.Rule;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -128,7 +126,7 @@ public class StatisticsUtils {
     }
 
 
-    public static void printStatsDays(HashMap<String, HashMap<String, Double>> statsDays) {
+    public static void printStatsDays(HashMap<String, HashMap<String, Double>> statsDays, boolean to_csv, String filePath) {
         for (Map.Entry<String, HashMap<String, Double>> e : statsDays.entrySet()) {
             System.out.println("\t\tDAY " + e.getKey());
 
@@ -136,26 +134,55 @@ public class StatisticsUtils {
                 System.out.println(f.getKey() + ": " + f.getValue());
             }
         }
+
+        if (to_csv){
+            try (FileWriter writer = new FileWriter(filePath)) {
+                writer.append("Date;Alerts;Predicted Alerts;Successfull Predictions;Success Rate\n");
+                for (Map.Entry<String, HashMap<String, Double>> e : statsDays.entrySet()) {
+                    writer.append(e.getKey()).append(";");
+                    writer.append(String.valueOf(e.getValue().get("Alerts"))).append(";");
+                    writer.append(String.valueOf(e.getValue().get("Predicted Alerts"))).append(";");
+                    writer.append(String.valueOf(e.getValue().get("Successfull Predictions"))).append(";");
+                    writer.append(String.valueOf(e.getValue().get("Success Rate")));
+                    writer.append("\n");
+                }
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
-    public static void printSupportRules(HashMap<Rule, List<Double>> supportXrule) {
+    public static void printSupportRules(HashMap<Rule, List<Double>> supportXrule, boolean to_csv, String filePath) {
         System.out.println("\t\tSUPPORT X RULE");
         for (Map.Entry<Rule, List<Double>> e : supportXrule.entrySet()) {
             System.out.println(e.getKey() + " --> " + e.getValue());
         }
+
+        if(to_csv){
+            saveMeanAndDev(supportXrule, filePath, "Support");
+        }
     }
 
-    public static void printConfidenceRules(HashMap<Rule, List<Double>> confidenceXrule) {
+    public static void printConfidenceRules(HashMap<Rule, List<Double>> confidenceXrule, boolean to_csv, String filePath) {
         System.out.println("\t\tCONFIDENCE X RULE");
         for (Map.Entry<Rule, List<Double>> e : confidenceXrule.entrySet()) {
             System.out.println(e.getKey() + " --> " + e.getValue());
         }
+
+        if(to_csv){
+            saveMeanAndDev(confidenceXrule, filePath, "Confidence");
+        }
     }
 
-    public static void printSuccRateRules(HashMap<Rule, List<Double>> succRateXrule) {
+    public static void printSuccRateRules(HashMap<Rule, List<Double>> succRateXrule, boolean to_csv, String filePath) {
         System.out.println("\t\tSUCCESS RATE X RULE");
         for (Map.Entry<Rule, List<Double>> e : succRateXrule.entrySet()) {
             System.out.println(e.getKey() + " --> " + e.getValue());
+        }
+
+        if(to_csv){
+            saveMeanAndDev(succRateXrule, filePath, "Success Rate");
         }
     }
 
@@ -169,12 +196,22 @@ public class StatisticsUtils {
         }
     }
 
-    public static void saveStatsToFile(){
+    private static void saveMeanAndDev(HashMap<Rule, List<Double>> stats, String filePath, String metric){
+        try (FileWriter writer = new FileWriter(filePath)) {
+            writer.append("Rule;Mean ").append(metric).append(";Dev ").append(metric).append("\n");
 
-    }
-    public static void saveMeansAndDev(){
+            for (Map.Entry<Rule, List<Double>> e : stats.entrySet()) {
+                writer.append(String.valueOf(e.getKey())).append(";").append(String.valueOf(calculateMean(e.getValue()))).append(";").append(String.valueOf(calculateStandardDeviation(e.getValue())));
+                writer.append("\n");
+            }
 
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+
+
 
 
 

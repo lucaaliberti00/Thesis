@@ -46,10 +46,9 @@ public class Rule {
 
     @Override
     public String toString() {
-        return "Rule{" +
-                "antecedent=" + antecedent +
-                ", consequent=" + consequent +
-                '}';
+        String r = antecedent + " ==> " + consequent;
+        r = r.replaceAll("\\[|\\]", "");
+        return r;
     }
 
     @Override

@@ -30,7 +30,7 @@ public class SimulationReader {
         }
 
         // Ordina la lista in base al rapporto (ratio) in ordine decrescente
-        ruleMatches.sort(new SuccessRateComparator());
+        //ruleMatches.sort(new SuccessRateComparator());
 
         return ruleMatches;
 
