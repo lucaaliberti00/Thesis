@@ -15,7 +15,10 @@ public class RuleMatch {
         this.rule = rule.replaceAll("\\[", "").replaceAll("]", "");
         this.partialMatches = partialMatches;
         this.fullMatches = fullMatches;
-        this.successRate = (double)fullMatches/partialMatches;
+        if(Double.isNaN((double)fullMatches/partialMatches))
+            this.successRate = 0;
+        else
+            this.successRate = (double)fullMatches/partialMatches;
         this.completeRule = completeRule;
     }
 

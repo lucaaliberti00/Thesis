@@ -36,7 +36,7 @@ public class Mining {
 
     public static void main(String[] args) {
         String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
-        String dirRules = "data/rules/FullSimulation/TopSeqRulesClass/";
+        String dirRules = "data/rules/FullSimulation/TSRNoPortNoScan/";
 
         ArrayList<String> days = new ArrayList<>();
         days.add("2019-03-11");

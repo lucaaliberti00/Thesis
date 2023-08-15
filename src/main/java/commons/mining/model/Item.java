@@ -20,7 +20,16 @@ public class Item {
     public Item(String nodeName, String category, Integer port) {
         this.nodeName = nodeName;
         this.category = category;
-        this.port = port;
+
+        if (port == null)
+            this.port = null;
+        else if (port > 49151)
+            this.port = 2;
+        else if(port > 1023)
+            this.port = 1;
+        else
+            this.port = 0;
+        //this.port = port;
     }
 
     public Item(Idea idea) {
@@ -33,6 +42,12 @@ public class Item {
         category = idea.getCategory().get(0);
         try {
             port = idea.getTarget().get(0).getPort().get(0);
+            if (port > 49151)
+                port = 2;
+            else if(port > 1023)
+                port = 1;
+            else
+                port = 0;
         } catch (IndexOutOfBoundsException | NullPointerException e) {
             port = null;
         }

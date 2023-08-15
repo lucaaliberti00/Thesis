@@ -63,9 +63,8 @@ public class StatisticsUtils {
             statsSuccRate.put(day, new HashMap<>());
 
         for (RuleMatch rm : ruleMatches) {
-            if (statsSuccRate.get(day).containsKey(rm.getCompleteRule()))
-                System.err.println(" ATTENZIONE ERRORE ");
-            statsSuccRate.get(day).put(rm.getCompleteRule(), rm.getSuccessRate());
+            if (!statsSuccRate.get(day).containsKey(rm.getCompleteRule()))
+                statsSuccRate.get(day).put(rm.getCompleteRule(), rm.getSuccessRate());
         }
     }
 

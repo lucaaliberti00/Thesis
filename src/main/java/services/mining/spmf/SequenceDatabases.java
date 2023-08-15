@@ -23,7 +23,6 @@ public class SequenceDatabases {
 
 		long timeStart = System.currentTimeMillis();
 
-		//List<Idea> ideas = readIdeasFromFormattedFile(new File(filePath));
 		List<Idea> ideas = readIdeasFromRawFile(new File(filePath));
 
 		SequenceDatabaseBuilder databaseBuilder = new SequenceDatabaseBuilder(keyType);
