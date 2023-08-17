@@ -21,9 +21,14 @@ public class Matching {
 
     public static void main(String[] args) {
 
-        String rulesFile = "data/rules/FullSimulation/TNSNoPort/ruleDB_";
+
         String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
-        String dirCSV = "data/csv/FullSimulation/TNSNoPort/";
+        //String dirCSV = "data/csv/FullSimulation/TNSNoNet/";
+        //String rulesFile = "data/rules/FullSimulation/TNSNoNet/ruleDB_";
+
+        String dirCSV = args[1];
+        String rulesFile = args[0];
+
 
         HashMap<String, HashMap<String, Double>> statsDays = new HashMap<>();
         HashMap<Rule, List<Double>> supportXrule = new HashMap<>();

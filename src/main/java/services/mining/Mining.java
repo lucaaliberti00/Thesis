@@ -35,7 +35,10 @@ public class Mining {
 
     public static void main(String[] args) {
         String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
-        String dirRules= "data/rules/FullSimulation/TNSNoPort/";
+        //String dirRules= "data/rules/FullSimulation/TopSeqRulesNoNet/";
+
+        String dirRules = args[0];
+        k = Integer.parseInt(args[1]);
 
         ArrayList<String> days = new ArrayList<>();
         days.add("2019-03-11");
@@ -62,12 +65,13 @@ public class Mining {
         // Create sequential database
         IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile(dataset, KeyType.SRC_IPV4);
 
-        //Collection<Rule> rules = miningTopSeqRules(sequenceDb);
-        Collection<Rule> rules = miningTNS(sequenceDb);
+        String algorithm= "TopSeqRules";
+        Collection<Rule> rules = miningTopSeqRules(sequenceDb);
+        //Collection<Rule> rules = miningTNS(sequenceDb);
         //Collection<Rule> rules = miningTopSeqClassRules(sequenceDb);
 
         assert rules != null;
-        writeRuleToFile(new ArrayList<>(rules), ruleDB, "TNS");
+        writeRuleToFile(new ArrayList<>(rules), ruleDB, algorithm);
     }
 
     public static void writeRuleToFile(List<Rule> rules, String ruleDB, String algorithm){

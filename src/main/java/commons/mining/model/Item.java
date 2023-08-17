@@ -18,23 +18,29 @@ public class Item {
     private Integer port;
 
     public Item(String nodeName, String category, Integer port) {
+        //String[] splitted = nodeName.split("\\.");
+        //nodeName = splitted[0] + "." + splitted[1];
+
         this.nodeName = nodeName;
         this.category = category;
 
         if (port == null)
             this.port = null;
+        /*
         else if (port > 49151)
             this.port = 2;
         else if(port > 1023)
             this.port = 1;
         else
-            this.port = 0;
-        //this.port = port;
+            this.port = 0;*/
+        this.port = port;
     }
 
     public Item(Idea idea) {
         try {
             nodeName = idea.getNode().get(0).getName();
+            //String[] splitted = nodeName.split("\\.");
+            //nodeName = splitted[0] + "." + splitted[1];
         } catch (Exception ex){
             nodeName = null;
         }
@@ -42,12 +48,12 @@ public class Item {
         category = idea.getCategory().get(0);
         try {
             port = idea.getTarget().get(0).getPort().get(0);
-            if (port > 49151)
+            /*if (port > 49151)
                 port = 2;
             else if(port > 1023)
                 port = 1;
             else
-                port = 0;
+                port = 0;*/
         } catch (IndexOutOfBoundsException | NullPointerException e) {
             port = null;
         }
