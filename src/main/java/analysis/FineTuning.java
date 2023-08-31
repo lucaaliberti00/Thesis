@@ -12,25 +12,27 @@ public class FineTuning {
 
     public static void main(String[] args) {
 
-        int[] kValues = {5,10,20,30};
+        int[] kValues = {10};
+        double[] cValues = {0.4, 0.5, 0.6};
 
-        for (int k : kValues){
-            String dirRules= "data/rules/TopSeqRulesK" + k + "/";
-            String dirCSV = "data/csv/TopSeqRulesK" + k + "/";
+        for (int k : kValues) {
+            for (double c : cValues) {
+                String dirRules = "data/rules/TopSeqRules_" + k + "_"+ c + "/";
+                String dirCSV = "data/csv/TopSeqRules_" + k + "_"+ c + "/";
 
-            creatDir(dirRules);
-            creatDir(dirCSV);
+                creatDir(dirRules);
+                creatDir(dirCSV);
 
-            String[] argsMining = {dirRules, String.valueOf(k)};
-            String[] argsMatching = {dirRules, dirCSV};
+                String[] argsMining = {dirRules, dirCSV, String.valueOf(k), String.valueOf(c)};
+                String[] argsMatching = {dirRules, dirCSV};
 
-            Mining.main(argsMining);
-            Matching.main(argsMatching);
-
+                Mining.main(argsMining);
+                Matching.main(argsMatching);
+            }
         }
     }
 
-    private static void creatDir(String directoryPath){
+    private static void creatDir(String directoryPath) {
         Path directory = Paths.get(directoryPath);
 
         // Verifica se la cartella esiste

@@ -35,12 +35,16 @@ public class Mining {
     private static int k = 10;
     private static int delta = 2;
 
+    private static String dirCSV;
+
     public static void main(String[] args) {
         String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
         //String dirRules= "data/rules/FullSimulation/TopSeqRulesNoNet/";
 
         String dirRules = args[0];
-        k = Integer.parseInt(args[1]);
+        dirCSV = args[1];
+        k = Integer.parseInt(args[2]);
+        minConf = Double.parseDouble(args[3]);
 
         ArrayList<String> days = new ArrayList<>();
         days.add("2019-03-11");
@@ -68,10 +72,9 @@ public class Mining {
         IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile(dataset, KeyType.SRC_IPV4);
 
         String algorithm= "TopSeqRules";
-        String resultFile = "data/miningStats/" + algorithm + "K" + k;
-        Collection<Rule> rules = miningTopSeqRules(sequenceDb, resultFile, day);
-        //Collection<Rule> rules = miningTNS(sequenceDb, resultFile);
-        //Collection<Rule> rules = miningTopSeqClassRules(sequenceDb, resultFile);
+        Collection<Rule> rules = miningTopSeqRules(sequenceDb, day);
+        //Collection<Rule> rules = miningTNS(sequenceDb, day);
+        //Collection<Rule> rules = miningTopSeqClassRules(sequenceDb, day);
 
         assert rules != null;
         writeRuleToFile(new ArrayList<>(rules), ruleDB, algorithm);
@@ -91,7 +94,7 @@ public class Mining {
         }
     }
 
-    public static Collection<Rule> miningTopSeqRules(IdeaSequenceDatabase sequenceDb, String resultFile, String day){
+    public static Collection<Rule> miningTopSeqRules(IdeaSequenceDatabase sequenceDb, String day){
         // Run algorithm
         logger.info("Running TopSeqRules algorithm");
         AlgoTopSeqRules algo = new AlgoTopSeqRules();
@@ -100,7 +103,7 @@ public class Mining {
         logger.info("Metrics: max memory usage {} MB", MemoryLogger.getInstance().getMaxMemory());
         logger.info("Metrics: total time running alg {} s", algo.getTotalTime() / 1000d);
 
-        writeResultToFile(resultFile, day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
+        writeResultToFile(dirCSV, day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
 
         if (spmfRules.isEmpty()) {
             return null;
@@ -118,7 +121,7 @@ public class Mining {
         }
         return rules;
     }
-    public static Collection<Rule> miningTNS(IdeaSequenceDatabase sequenceDb, String resultFile, String day){
+    public static Collection<Rule> miningTNS(IdeaSequenceDatabase sequenceDb, String day){
         // Run algorithm
         logger.info("Running TNS algorithm");
         AlgoTNS algo = new AlgoTNS();
@@ -127,7 +130,7 @@ public class Mining {
         logger.info("Metrics: max memory usage {} MB", MemoryLogger.getInstance().getMaxMemory());
         logger.info("Metrics: total time running alg {} s", algo.getTotalTime() / 1000d);
 
-        writeResultToFile(resultFile, day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
+        writeResultToFile(dirCSV, day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
 
 
         if (spmfRules.isEmpty()) {
@@ -145,7 +148,7 @@ public class Mining {
         }
         return rules;
     }
-    public static Collection<Rule> miningTopSeqClassRules(IdeaSequenceDatabase sequenceDb, String resultFile, String day){
+    public static Collection<Rule> miningTopSeqClassRules(IdeaSequenceDatabase sequenceDb, String day){
         // Run algorithm
         logger.info("Running TopSeqClassRules algorithm");
 
@@ -168,7 +171,7 @@ public class Mining {
         logger.info("Metrics: max memory usage {} MB", MemoryLogger.getInstance().getMaxMemory());
         logger.info("Metrics: total time running alg {} s", algo.getTotalTime() / 1000d);
 
-        writeResultToFile(resultFile, day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
+        writeResultToFile(dirCSV, day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
 
 
         if (spmfRules.isEmpty()) {
