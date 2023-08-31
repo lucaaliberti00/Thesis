@@ -186,6 +186,29 @@ public class StatisticsUtils {
         }
     }
 
+    public static void printTimesInTop(HashMap<Rule, List<Double>> rules, boolean to_csv, String filePath) {
+        System.out.println("\t\tTIMES IN TOP");
+        for (Map.Entry<Rule, List<Double>> e : rules.entrySet()) {
+            System.out.println(e.getKey() + " --> " + e.getValue().size());
+        }
+
+        if(to_csv){
+            try (FileWriter writer = new FileWriter(filePath)) {
+                writer.append("Rule;TimesInTop\n");
+
+                for (Map.Entry<Rule, List<Double>> e : rules.entrySet()) {
+                    writer.append(String.valueOf(e.getKey())).append(";").append(String.valueOf(e.getValue().size()));
+                    writer.append("\n");
+                }
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
+    }
+
     public static void printStatsSuccRate(HashMap<String, HashMap<Rule, Double>> statsSuccRate) {
         for (Map.Entry<String, HashMap<Rule, Double>> e : statsSuccRate.entrySet()) {
             System.out.println("\t\tDAY " + e.getKey());

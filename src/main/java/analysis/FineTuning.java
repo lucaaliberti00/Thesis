@@ -12,7 +12,7 @@ public class FineTuning {
 
     public static void main(String[] args) {
 
-        int[] kValues = {50, 100,500,1000};
+        int[] kValues = {5,10,20,30};
 
         for (int k : kValues){
             String dirRules= "data/rules/TopSeqRulesK" + k + "/";
@@ -28,9 +28,6 @@ public class FineTuning {
             Matching.main(argsMatching);
 
         }
-
-
-
     }
 
     private static void creatDir(String directoryPath){

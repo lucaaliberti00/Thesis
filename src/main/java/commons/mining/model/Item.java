@@ -24,9 +24,9 @@ public class Item {
         this.nodeName = nodeName;
         this.category = category;
 
-        if (port == null)
+        /*if (port == null)
             this.port = null;
-        /*
+
         else if (port > 49151)
             this.port = 2;
         else if(port > 1023)

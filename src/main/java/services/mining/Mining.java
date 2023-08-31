@@ -1,6 +1,8 @@
 package services.mining;
 
 
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
@@ -53,22 +55,23 @@ public class Mining {
             String inputFile = dirSim + day + "\\aggregated_" + day + ".json";
             String ruleDB = dirRules + "ruleDB_" + day;
 
-            run(inputFile, ruleDB);
+            run(inputFile, ruleDB, day);
         }
 
 
     }
 
 
-    public static void run(String dataset, String ruleDB) {
+    public static void run(String dataset, String ruleDB, String day) {
 
         // Create sequential database
         IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile(dataset, KeyType.SRC_IPV4);
 
         String algorithm= "TopSeqRules";
-        Collection<Rule> rules = miningTopSeqRules(sequenceDb);
-        //Collection<Rule> rules = miningTNS(sequenceDb);
-        //Collection<Rule> rules = miningTopSeqClassRules(sequenceDb);
+        String resultFile = "data/miningStats/" + algorithm + "K" + k;
+        Collection<Rule> rules = miningTopSeqRules(sequenceDb, resultFile, day);
+        //Collection<Rule> rules = miningTNS(sequenceDb, resultFile);
+        //Collection<Rule> rules = miningTopSeqClassRules(sequenceDb, resultFile);
 
         assert rules != null;
         writeRuleToFile(new ArrayList<>(rules), ruleDB, algorithm);
@@ -88,7 +91,7 @@ public class Mining {
         }
     }
 
-    public static Collection<Rule> miningTopSeqRules(IdeaSequenceDatabase sequenceDb){
+    public static Collection<Rule> miningTopSeqRules(IdeaSequenceDatabase sequenceDb, String resultFile, String day){
         // Run algorithm
         logger.info("Running TopSeqRules algorithm");
         AlgoTopSeqRules algo = new AlgoTopSeqRules();
@@ -97,6 +100,8 @@ public class Mining {
         logger.info("Metrics: max memory usage {} MB", MemoryLogger.getInstance().getMaxMemory());
         logger.info("Metrics: total time running alg {} s", algo.getTotalTime() / 1000d);
 
+        writeResultToFile(resultFile, day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
+
         if (spmfRules.isEmpty()) {
             return null;
         }
@@ -113,7 +118,7 @@ public class Mining {
         }
         return rules;
     }
-    public static Collection<Rule> miningTNS(IdeaSequenceDatabase sequenceDb){
+    public static Collection<Rule> miningTNS(IdeaSequenceDatabase sequenceDb, String resultFile, String day){
         // Run algorithm
         logger.info("Running TNS algorithm");
         AlgoTNS algo = new AlgoTNS();
@@ -122,6 +127,9 @@ public class Mining {
         logger.info("Metrics: max memory usage {} MB", MemoryLogger.getInstance().getMaxMemory());
         logger.info("Metrics: total time running alg {} s", algo.getTotalTime() / 1000d);
 
+        writeResultToFile(resultFile, day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
+
+
         if (spmfRules.isEmpty()) {
             return null;
         }
@@ -137,7 +145,7 @@ public class Mining {
         }
         return rules;
     }
-    public static Collection<Rule> miningTopSeqClassRules(IdeaSequenceDatabase sequenceDb){
+    public static Collection<Rule> miningTopSeqClassRules(IdeaSequenceDatabase sequenceDb, String resultFile, String day){
         // Run algorithm
         logger.info("Running TopSeqClassRules algorithm");
 
@@ -160,6 +168,9 @@ public class Mining {
         logger.info("Metrics: max memory usage {} MB", MemoryLogger.getInstance().getMaxMemory());
         logger.info("Metrics: total time running alg {} s", algo.getTotalTime() / 1000d);
 
+        writeResultToFile(resultFile, day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
+
+
         if (spmfRules.isEmpty()) {
             return null;
         }
@@ -176,6 +187,34 @@ public class Mining {
             rules.add(rule);
         }
         return rules;
+    }
+
+    public static void writeResultToFile(String filename, String date, String rules, String time, String memory) {
+        try {
+            File file = new File(filename);
+
+            // Check if the file already exists
+            if (!file.exists()) {
+                file.createNewFile();
+
+                // Append the initial string
+                FileWriter fileWriter = new FileWriter(file, true);
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                bufferedWriter.write("Date;Rules;Time;Memory");
+                bufferedWriter.newLine();
+                bufferedWriter.close();
+            }
+
+            // Append the values to the file
+            FileWriter fileWriter = new FileWriter(file, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(date + ";" + rules + ";" + time + ";" + memory);
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -23,11 +23,11 @@ public class Matching {
 
 
         String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
-        //String dirCSV = "data/csv/FullSimulation/TNSNoNet/";
-        //String rulesFile = "data/rules/FullSimulation/TNSNoNet/ruleDB_";
+        //String dirCSV = "data/csv/TopSeqRulesK50/";
+        //String rulesFile = "data/rules/TopSeqRulesK50/ruleDB_";
 
         String dirCSV = args[1];
-        String rulesFile = args[0];
+        String rulesFile = args[0] + "ruleDB_";
 
 
         HashMap<String, HashMap<String, Double>> statsDays = new HashMap<>();
@@ -81,6 +81,7 @@ public class Matching {
         printSupportRules(supportXrule, true, dirCSV + "StatsSupport.csv" );
         printConfidenceRules(confidenceXrule, true, dirCSV + "StatsConfidence.csv" );
         printSuccRateRules(computeSucRateXRule(statsSuccRate), true, dirCSV + "StatsSuccessRate.csv" );
+        printTimesInTop(supportXrule, true, dirCSV + "TimesInTop.csv");
 
 
     }
@@ -202,8 +203,23 @@ public class Matching {
         if (parts.length == 2) {
             String antecedentStr = parts[0].replaceAll(" ", "");
             String consequentStr = parts[1].split(" ")[0].replaceAll(" ", "");
-            int support = new Integer(parts[1].split(" ")[1]);
-            double confidence = new Double(parts[1].split(" ")[3].replace(',', '.'));
+            int support;
+            double confidence;
+
+
+            if (parts[1].split(" ").length > 6) {
+                int iterations = parts[1].split(" ").length - 5;
+                for (int j = 0; j < iterations; j++) {
+                    consequentStr += parts[1].split(" ")[j];
+                }
+                support = new Integer(parts[1].split(" ")[iterations]);
+                confidence = new Double(parts[1].split(" ")[iterations + 2].replace(',', '.'));
+            } else {
+                consequentStr = parts[1].split(" ")[0].replaceAll(" ", "");
+                support = new Integer(parts[1].split(" ")[1]);
+                confidence = new Double(parts[1].split(" ")[3].replace(',', '.'));
+            }
+
 
             Set<Item> antecedent = parseItems(antecedentStr);
             Set<Item> consequent = parseItems(consequentStr);
