@@ -219,12 +219,12 @@ public class StatisticsUtils {
         }
     }
 
-    private static void saveMeanAndDev(HashMap<Rule, List<Double>> stats, String filePath, String metric){
+    public static void saveMeanAndDev(HashMap<Rule, List<Double>> stats, String filePath, String metric){
         try (FileWriter writer = new FileWriter(filePath)) {
             writer.append("Rule;Mean ").append(metric).append(";Dev ").append(metric).append("\n");
 
             for (Map.Entry<Rule, List<Double>> e : stats.entrySet()) {
-                writer.append(String.valueOf(e.getKey())).append(";").append(String.valueOf(calculateMean(e.getValue()))).append(";").append(String.valueOf(calculateStandardDeviation(e.getValue())));
+                writer.append(String.valueOf(e.getKey()).trim()).append(";").append(String.valueOf(calculateMean(e.getValue()))).append(";").append(String.valueOf(calculateStandardDeviation(e.getValue())));
                 writer.append("\n");
             }
 

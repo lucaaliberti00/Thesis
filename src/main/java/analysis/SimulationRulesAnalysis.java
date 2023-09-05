@@ -1,19 +1,29 @@
 package analysis;
 
 import analysis.utils.RuleMatch;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import commons.idea.Idea;
+import commons.mining.model.Item;
 import commons.mining.model.Rule;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import static analysis.SimulationReader.run;
+import static services.matching.Matching.parseItems;
+import static services.matching.utils.StatisticsUtils.*;
 
 public class SimulationRulesAnalysis {
 
     public static void main(String[] args) throws IOException {
         String dirSim = "C:\\Users\\lucaa\\Desktop\\FullSimulation\\";
-        String csvPath = "data/csv/TopSeqRulesTotalSimulation.csv";
+        String dirCSV = "simulation/TopSeqRules/";
+
+        HashMap<String, HashMap<String, Double>> statsDays = new HashMap<>();
+        HashMap<String, HashMap<Rule, Double>> statsSuccRate = new HashMap<>();
+        HashMap<Rule, List<Double>> statsMitigationTime = new HashMap<>();
+        HashMap<String, List<Double>> statsMitigationTimexDay = new HashMap<>();
 
 
         ArrayList<String> days = new ArrayList<>();
@@ -26,24 +36,71 @@ public class SimulationRulesAnalysis {
         days.add("2019-03-17");
 
         for (String day : days) {
-            List<String> performance = new ArrayList<>();
             String fileObs = dirSim + day + "\\observations_" + day + ".json";
             String filePred = dirSim + day + "\\predictions_" + day + ".json";
             String fileAggr = dirSim + day + "\\aggregated_" + day + ".json";
 
 
             System.out.println("\t\tDAY " + day + "\t");
-            List<RuleMatch> ruleMatches = run(filePred, fileObs);
+            List<RuleMatch> ruleMatches = run(filePred, fileObs, null);
 
-            for(RuleMatch r : ruleMatches){
-                performance.add(r.toCSV(day));
+            computeStatsDays(statsDays, ruleMatches, day, countLines(fileAggr), true);
+            computeStatsSuccRate(statsSuccRate, ruleMatches, day);
+            statsMitigationTimexDay.put(day, computeMitigationTime(statsMitigationTime, fileObs));
+
+        }
+
+        printStatsDays(statsDays, true, dirCSV + "StatsDays.csv");
+        printSuccRateRules(computeSucRateXRule(statsSuccRate), true, dirCSV + "StatsSuccessRate.csv");
+        printMitigationTimexRule(statsMitigationTime, dirCSV + "StatsMitigationTimexRule.csv");
+        printMitigationTimexDay(statsMitigationTimexDay, dirCSV + "StatsMitigationTimexDay.csv");
+    }
+
+    public static List<Double> computeMitigationTime(HashMap<Rule, List<Double>> mitigationTimexRule, String fileObs) {
+        List<Double> meanMitigationTime = new ArrayList<>();
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileObs))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                JsonNode jsonNode = objectMapper.readTree(line);
+                String rule = jsonNode.get("Note").asText();
+
+
+                Set<Item> antecedent = parseItems(rule.split(" ==> ")[0].trim());
+                Set<Item> consequent = parseItems(rule.split(" ==> ")[1].trim());
+                Rule r = new Rule(antecedent, consequent, 0, 0);
+
+                if (jsonNode.get("mitigationTime").asDouble() > 0) {
+                    meanMitigationTime.add(jsonNode.get("mitigationTime").asDouble());
+                    if (!mitigationTimexRule.containsKey(r))
+                        mitigationTimexRule.put(r, new ArrayList<>());
+                    mitigationTimexRule.get(r).add(jsonNode.get("mitigationTime").asDouble());
+                }
             }
-            saveToCSV(performance, csvPath);
-            System.out.println("Alerts: " + countLines(fileAggr));
-            System.out.println();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        return meanMitigationTime;
 
+    }
 
+    public static void printMitigationTimexRule(HashMap<Rule, List<Double>> mitigationTimexRule, String filePath) {
+        saveMeanAndDev(mitigationTimexRule, filePath, "Mitigation Time");
+    }
+
+    public static void printMitigationTimexDay(HashMap<String, List<Double>> mitigationTimexDay, String filePath) {
+        try (FileWriter writer = new FileWriter(filePath)) {
+            writer.append("Rule;Mean ").append("Mitigation Time").append(";Dev ").append("Mitigation Time").append("\n");
+
+            for (Map.Entry<String, List<Double>> e : mitigationTimexDay.entrySet()) {
+                writer.append(String.valueOf(e.getKey()).trim()).append(";").append(String.valueOf(calculateMean(e.getValue()))).append(";").append(String.valueOf(calculateStandardDeviation(e.getValue())));
+                writer.append("\n");
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }
@@ -55,27 +112,6 @@ public class SimulationRulesAnalysis {
                 lines++;
             }
             return lines;
-        }
-    }
-
-    public static void saveToCSV(List<String> stringList, String filePath) {
-        try {
-            boolean fileExists = new File(filePath).exists();
-
-            try (FileWriter writer = new FileWriter(filePath, true)) {
-                if (!fileExists) {
-                    // Il file è vuoto, quindi scriviamo l'intestazione
-                    writer.append("Date;Rule;SupA;SupAB;Confidence");
-                    writer.append("\n");
-                }
-
-                for (String str : stringList) {
-                    writer.append(str);
-                    writer.append("\n");
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 

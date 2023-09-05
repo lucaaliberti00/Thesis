@@ -229,7 +229,7 @@ public class Matching {
         return null;
     }
 
-    private static Set<Item> parseItems(String itemsStr) {
+    public static Set<Item> parseItems(String itemsStr) {
         Set<Item> items = new HashSet<>();
         String[] itemStrs = itemsStr.split(",");
         for (String itemStr : itemStrs) {

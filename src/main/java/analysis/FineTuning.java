@@ -12,13 +12,13 @@ public class FineTuning {
 
     public static void main(String[] args) {
 
-        int[] kValues = {10};
+        int[] kValues = {5, 10, 20};
         double[] cValues = {0.4, 0.5, 0.6};
 
         for (int k : kValues) {
             for (double c : cValues) {
-                String dirRules = "data/rules/TopSeqRules_" + k + "_"+ c + "/";
-                String dirCSV = "data/csv/TopSeqRules_" + k + "_"+ c + "/";
+                String dirRules = "data/TopSeqClassRules/rules/TopSeqClassRules_" + k + "_"+ c + "/";
+                String dirCSV = "data/TopSeqClassRules/csv/TopSeqClassRules_" + k + "_"+ c + "/";
 
                 creatDir(dirRules);
                 creatDir(dirCSV);

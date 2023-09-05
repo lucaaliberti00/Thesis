@@ -71,10 +71,10 @@ public class Mining {
         // Create sequential database
         IdeaSequenceDatabase sequenceDb = SequenceDatabases.fromFile(dataset, KeyType.SRC_IPV4);
 
-        String algorithm= "TopSeqRules";
-        Collection<Rule> rules = miningTopSeqRules(sequenceDb, day);
+        String algorithm= "TopSeqClassRules";
+        //Collection<Rule> rules = miningTopSeqRules(sequenceDb, day);
         //Collection<Rule> rules = miningTNS(sequenceDb, day);
-        //Collection<Rule> rules = miningTopSeqClassRules(sequenceDb, day);
+        Collection<Rule> rules = miningTopSeqClassRules(sequenceDb, day);
 
         assert rules != null;
         writeRuleToFile(new ArrayList<>(rules), ruleDB, algorithm);
@@ -103,7 +103,7 @@ public class Mining {
         logger.info("Metrics: max memory usage {} MB", MemoryLogger.getInstance().getMaxMemory());
         logger.info("Metrics: total time running alg {} s", algo.getTotalTime() / 1000d);
 
-        writeResultToFile(dirCSV, day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
+        writeResultToFile(dirCSV + "StatsMining.csv", day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
 
         if (spmfRules.isEmpty()) {
             return null;
@@ -130,7 +130,7 @@ public class Mining {
         logger.info("Metrics: max memory usage {} MB", MemoryLogger.getInstance().getMaxMemory());
         logger.info("Metrics: total time running alg {} s", algo.getTotalTime() / 1000d);
 
-        writeResultToFile(dirCSV, day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
+        writeResultToFile(dirCSV + "StatsMining.csv", day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
 
 
         if (spmfRules.isEmpty()) {
@@ -171,7 +171,7 @@ public class Mining {
         logger.info("Metrics: max memory usage {} MB", MemoryLogger.getInstance().getMaxMemory());
         logger.info("Metrics: total time running alg {} s", algo.getTotalTime() / 1000d);
 
-        writeResultToFile(dirCSV, day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
+        writeResultToFile(dirCSV+ "StatsMining.csv", day, String.valueOf(spmfRules.size()), String.valueOf(algo.getTotalTime() / 1000d), String.valueOf(MemoryLogger.getInstance().getMaxMemory()));
 
 
         if (spmfRules.isEmpty()) {
@@ -198,6 +198,7 @@ public class Mining {
 
             // Check if the file already exists
             if (!file.exists()) {
+                file.getParentFile().mkdirs();
                 file.createNewFile();
 
                 // Append the initial string

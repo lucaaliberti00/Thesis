@@ -47,7 +47,7 @@ public class Rule {
     @Override
     public String toString() {
         String r = antecedent + " ==> " + consequent;
-        r = r.replaceAll("\\[|\\]", "");
+        r = r.replaceAll("\\[|\\]", "").trim();
         return r;
     }
 
